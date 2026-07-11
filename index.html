@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LivingYards — Sustainable Living School Gardens</title>
+<meta name="description" content="LivingYards is an Erasmus+ KA210-SCH small-scale partnership proposal (2026–2028) transforming school yards in Türkiye, Romania and Italy into living, sensor-managed garden laboratories.">
+<link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="%2317241A"/><rect x="0" y="46" width="28" height="18" fill="%23B7B5AD"/><rect x="36" y="46" width="28" height="18" fill="%23A8A69F"/><path d="M32 50 V26" stroke="%237FB646" stroke-width="4" stroke-linecap="round"/><path d="M32 31 C24 31 20 25 19 18 C27 18 31 24 32 31 Z" fill="%237FB646"/><path d="M32 26 C40 26 44 20 45 13 C37 13 33 19 32 26 Z" fill="%23BFE58A"/><circle cx="32" cy="41" r="3.2" fill="%23FAFAF6"/></svg>'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#17241A;
+  --soil:#2A3A2E;
+  --leaf:#3E7C4F;
+  --sprout:#7FB646;
+  --sprout-soft:#E8F1DC;
+  --concrete:#B7B5AD;
+  --concrete-light:#E7E5DF;
+  --paper:#FAFAF6;
+  --data:#295E8F;
+  --amber:#C99B3F;
+  --line:rgba(23,36,26,.14);
+  --disp:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Instrument Sans",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.6;font-size:17px}
+img,svg{max-width:100%}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--disp);line-height:1.08;font-weight:640;letter-spacing:-.01em}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--leaf);display:block;margin-bottom:14px}
+:focus-visible{outline:3px solid var(--sprout);outline-offset:2px;border-radius:2px}
+
+/* ---------- header ---------- */
+header{position:sticky;top:0;z-index:50;background:rgba(250,250,246,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{text-decoration:none;display:flex;align-items:center;gap:11px}
+.logo svg{width:38px;height:38px;flex:none}
+.logo .wordmark{display:flex;flex-direction:column;line-height:1.05}
+.logo .wordmark b{font-family:var(--disp);font-weight:700;font-size:21px;letter-spacing:-.01em}
+.logo .wordmark span{font-family:var(--mono);font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--leaf)}
+.nav ul{display:flex;gap:24px;list-style:none}
+.nav ul a{text-decoration:none;font-size:15px;font-weight:500;color:var(--soil)}
+.nav ul a:hover{color:var(--leaf)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 12px;font-family:var(--mono);font-size:12px;cursor:pointer}
+
+/* ---------- hero: concrete → life ---------- */
+.hero{position:relative;overflow:hidden;color:#fff;
+  background:
+    radial-gradient(1200px 600px at 85% 110%, rgba(127,182,70,.55), transparent 60%),
+    linear-gradient(105deg,#5A5A55 0%, #4B5347 38%, #33513A 62%, #2C6B41 100%);
+}
+.hero::before{content:"";position:absolute;inset:0;opacity:.16;pointer-events:none;
+  background-image:radial-gradient(rgba(255,255,255,.5) .8px, transparent .9px);
+  background-size:9px 9px;
+  mask-image:linear-gradient(100deg,#000 0 45%,transparent 75%);
+  -webkit-mask-image:linear-gradient(100deg,#000 0 45%,transparent 75%);
+}
+.hero .wrap{position:relative;padding-top:80px;padding-bottom:64px}
+.hero .badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.hero h1{font-size:clamp(38px,5.8vw,76px);max-width:16ch}
+.hero h1 .concrete-word{color:#D8D6CE}
+.hero h1 .life-word{color:#BFE58A}
+.hero p.lead{max-width:58ch;margin-top:22px;font-size:clamp(16px,1.6vw,19px);color:rgba(255,255,255,.88)}
+.hero .cta-row{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:600;font-size:15px;padding:13px 24px;border-radius:999px;transition:transform .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-solid{background:var(--sprout);color:var(--ink)}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.55);color:#fff}
+.hero .facts{margin-top:52px;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.22);border-radius:14px;overflow:hidden}
+.hero .facts div{background:rgba(23,36,26,.38);padding:18px 20px}
+.hero .facts b{display:block;font-family:var(--disp);font-size:24px;font-weight:640}
+.hero .facts span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+.eu-tag{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:7px 16px}
+.status-tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;background:rgba(201,155,63,.18);border:1px solid rgba(201,155,63,.6);color:#F2D9A4;border-radius:999px;padding:7px 16px}
+.status-tag::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--amber);animation:pulse 2.2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.eu-flag{width:22px;height:15px;border-radius:2px;background:#003399;position:relative;flex:none}
+.eu-flag::after{content:"★";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#FFCC00;font-size:9px}
+
+/* ---------- sensor ticker ---------- */
+.ticker{background:var(--ink);color:#CFE3B8;border-top:1px solid rgba(255,255,255,.12);overflow:hidden}
+.ticker .track{display:flex;gap:56px;white-space:nowrap;padding:11px 0;font-family:var(--mono);font-size:12.5px;animation:scroll 42s linear infinite;width:max-content}
+.ticker span b{color:#fff;font-weight:500}
+.ticker .dot{color:var(--sprout)}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){
+  .ticker .track{animation:none;flex-wrap:wrap;white-space:normal;width:auto;padding:11px 24px}
+  .status-tag::before{animation:none}
+  html{scroll-behavior:auto}
+}
+
+/* ---------- sections ---------- */
+section{padding:88px 0}
+section.tint{background:var(--sprout-soft)}
+.sec-head{max-width:760px;margin-bottom:48px}
+.sec-head h2{font-size:clamp(30px,4vw,46px)}
+.sec-head p{margin-top:14px;color:var(--soil)}
+
+/* idea two-col */
+.idea{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:start}
+.idea .quotebox{background:var(--ink);color:#fff;border-radius:18px;padding:34px 32px;font-family:var(--disp);font-size:clamp(20px,2.2vw,26px);line-height:1.35;position:relative}
+.idea .quotebox small{display:block;margin-top:18px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--sprout)}
+.idea p + p{margin-top:16px}
+
+/* objectives */
+.obj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.obj{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:12px}
+.obj .tag{font-family:var(--mono);font-size:12px;color:var(--leaf);letter-spacing:.1em}
+.obj h3{font-size:21px}
+.obj p{font-size:15.5px;color:var(--soil)}
+.obj .result{margin-top:auto;border-top:1px dashed var(--line);padding-top:12px;font-size:14px}
+.obj .result b{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--data)}
+
+/* partners */
+.partners{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.partner{border-radius:16px;padding:28px;color:#fff;display:flex;flex-direction:column;gap:10px;min-height:300px}
+.partner.tr{background:linear-gradient(160deg,#2C6B41,#17241A)}
+.partner.ro{background:linear-gradient(160deg,#295E8F,#14263B)}
+.partner.it{background:linear-gradient(160deg,#7A6A2F,#33301A)}
+.partner .country{font-family:var(--mono);font-size:12px;letter-spacing:.14em}
+.partner h3{font-size:22px}
+.partner .role{font-family:var(--disp);font-weight:600;font-size:15px;color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.35);align-self:flex-start;border-radius:999px;padding:5px 14px}
+.partner p{font-size:14.5px;color:rgba(255,255,255,.85)}
+.partner a{color:#fff;font-size:13px;font-family:var(--mono);margin-top:auto}
+.assoc{margin-top:22px;background:#fff;border:1px dashed var(--line);border-radius:14px;padding:20px 24px;display:flex;gap:16px;align-items:baseline;flex-wrap:wrap}
+.assoc b{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--data);flex:none}
+.assoc p{font-size:14.5px;color:var(--soil)}
+
+/* activities timeline */
+.timeline{position:relative;margin-top:8px}
+.timeline::before{content:"";position:absolute;left:19px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--concrete),var(--sprout))}
+.tl-item{position:relative;padding:0 0 40px 64px}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{content:"";position:absolute;left:11px;top:6px;width:18px;height:18px;border-radius:50%;background:var(--paper);border:4px solid var(--leaf)}
+.tl-item .when{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--leaf)}
+.tl-item .when em{font-style:normal;color:var(--data)}
+.tl-item h3{font-size:22px;margin:6px 0 8px}
+.tl-item p{max-width:72ch;color:var(--soil);font-size:15.5px}
+
+/* outputs */
+.out-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.out{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px}
+.out .icon{width:44px;height:44px;border-radius:12px;background:var(--sprout-soft);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px}
+.out h3{font-size:19px;margin-bottom:8px}
+.out p{font-size:14.5px;color:var(--soil)}
+.out.featured{grid-column:1/-1;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;background:var(--ink);color:#fff;border:none}
+.out.featured .icon{background:rgba(127,182,70,.2);width:64px;height:64px;font-size:30px;margin:0}
+.out.featured p{color:rgba(255,255,255,.85);font-size:15.5px}
+.out.featured .langs{margin-top:10px;font-family:var(--mono);font-size:12px;color:var(--sprout)}
+
+/* impact numbers */
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.num{border-left:3px solid var(--sprout);padding-left:18px}
+.num b{display:block;font-family:var(--disp);font-size:clamp(32px,3.6vw,44px);font-weight:680;line-height:1}
+.num span{font-size:14px;color:var(--soil)}
+
+/* footer */
+footer{background:var(--ink);color:rgba(255,255,255,.82);padding:60px 0 40px;font-size:14px}
+footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:40px}
+footer h4{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--sprout);margin-bottom:14px}
+footer ul{list-style:none}
+footer li{margin-bottom:8px}
+footer a{color:rgba(255,255,255,.82);text-decoration:none}
+footer a:hover{color:#fff;text-decoration:underline}
+footer .footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+footer .footer-logo svg{width:34px;height:34px}
+footer .footer-logo b{font-family:var(--disp);font-size:19px;color:#fff}
+.eu-disclaimer{border-top:1px solid rgba(255,255,255,.15);padding-top:28px;display:flex;gap:18px;align-items:flex-start}
+.eu-disclaimer .eu-flag{width:44px;height:30px;margin-top:3px}
+.eu-disclaimer .eu-flag::after{font-size:14px}
+.eu-disclaimer p{font-size:12.5px;color:rgba(255,255,255,.6);max-width:88ch}
+
+/* responsive */
+@media(max-width:920px){
+  .obj-grid,.partners,.out-grid{grid-template-columns:1fr 1fr}
+  .idea{grid-template-columns:1fr}
+  .hero .facts{grid-template-columns:1fr 1fr}
+  .nums{grid-template-columns:1fr 1fr}
+  footer .cols{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .nav ul{display:none;position:absolute;top:68px;left:0;right:0;background:var(--paper);flex-direction:column;padding:20px 24px;border-bottom:1px solid var(--line);gap:16px}
+  .nav ul.open{display:flex}
+  .menu-btn{display:block}
+  .obj-grid,.partners,.out-grid,.nums{grid-template-columns:1fr}
+  .out.featured{grid-template-columns:1fr}
+  footer .cols{grid-template-columns:1fr}
+  section{padding:64px 0}
+}
+</style>
+</head>
+<body>
+
+<!-- LivingYards logo (inline SVG symbol) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="ly-logo" viewBox="0 0 64 64">
+    <rect width="64" height="64" rx="14" fill="#17241A"/>
+    <!-- concrete pavers -->
+    <rect x="0" y="46" width="28" height="18" fill="#B7B5AD"/>
+    <rect x="36" y="46" width="28" height="18" fill="#A8A69F"/>
+    <line x1="0" y1="55" x2="28" y2="55" stroke="#9C9A92" stroke-width="1"/>
+    <line x1="36" y1="55" x2="64" y2="55" stroke="#918F87" stroke-width="1"/>
+    <!-- sprout growing from the gap -->
+    <path d="M32 51 V26" stroke="#7FB646" stroke-width="4" stroke-linecap="round"/>
+    <path d="M32 31 C24 31 20 25 19 18 C27 18 31 24 32 31 Z" fill="#7FB646"/>
+    <path d="M32 26 C40 26 44 20 45 13 C37 13 33 19 32 26 Z" fill="#BFE58A"/>
+    <!-- sensor node + signal -->
+    <circle cx="32" cy="41" r="3.2" fill="#FAFAF6"/>
+    <path d="M38.5 37.5 a8 8 0 0 1 0 7" stroke="#7FB646" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M42 34.5 a12.5 12.5 0 0 1 0 13" stroke="#7FB646" stroke-width="2" fill="none" stroke-linecap="round" opacity=".55"/>
+  </symbol>
+</svg>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="LivingYards home">
+      <svg role="img" aria-hidden="true"><use href="#ly-logo"/></svg>
+      <span class="wordmark"><b>LivingYards</b><span>Sustainable Living School Gardens</span></span>
+    </a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="mainnav" onclick="const u=document.getElementById('mainnav');u.classList.toggle('open');this.setAttribute('aria-expanded',u.classList.contains('open'))">MENU</button>
+    <ul id="mainnav">
+      <li><a href="#idea">The Idea</a></li>
+      <li><a href="#objectives">Objectives</a></li>
+      <li><a href="#partners">Partners</a></li>
+      <li><a href="#activities">Activities</a></li>
+      <li><a href="#outputs">Outputs</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+
+<div class="hero">
+  <div class="wrap">
+    <div class="badges">
+      <span class="eu-tag"><span class="eu-flag" aria-hidden="true"></span>Erasmus+ KA210-SCH · Call 2026 · Round 1</span>
+      <span class="status-tag">Application submitted — under evaluation</span>
+    </div>
+    <h1>Sustainable Living School Gardens</h1>
+    <p class="lead">LivingYards turns <span style="color:#D8D6CE">concrete school yards</span> in Türkiye, Romania and Italy into <span style="color:#BFE58A">living laboratories</span> — where compost cycles, rainwater harvesting and student-built robotic irrigation transform eco-anxiety into active ecological citizenship.</p>
+    <div class="cta-row">
+      <a class="btn btn-solid" href="#outputs">Explore the outputs</a>
+      <a class="btn btn-ghost" href="#activities">See the activities</a>
+    </div>
+    <div class="facts" role="list">
+      <div role="listitem"><b>3 + 1</b><span>Partner schools + associated partner</span></div>
+      <div role="listitem"><b>15 months</b><span>Nov 2026 – Feb 2028</span></div>
+      <div role="listitem"><b>€60,000</b><span>Requested lump sum</span></div>
+      <div role="listitem"><b>Green + Digital</b><span>Twin transition in schools</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="ticker" aria-label="Sample sensor readings from the living gardens">
+  <div class="track">
+    <span><b>KINIK.TR</b> soil moisture <span class="dot">●</span> 41%</span>
+    <span><b>KINIK.TR</b> rainwater tank <span class="dot">●</span> 312 L</span>
+    <span><b>ROMAN.RO</b> irrigation pump <span class="dot">●</span> AUTO / arduino-uno</span>
+    <span><b>SALEMI.IT</b> micro-greens cabinet <span class="dot">●</span> LED 660nm ON</span>
+    <span><b>KINIK.TR</b> olive grove <span class="dot">●</span> 120 trees monitored</span>
+    <span><b>ROMAN.RO</b> compost temp <span class="dot">●</span> 54°C</span>
+    <span><b>SALEMI.IT</b> biocorridor <span class="dot">●</span> 17 species logged</span>
+    <span><b>KINIK.TR</b> soil moisture <span class="dot">●</span> 41%</span>
+    <span><b>KINIK.TR</b> rainwater tank <span class="dot">●</span> 312 L</span>
+    <span><b>ROMAN.RO</b> irrigation pump <span class="dot">●</span> AUTO / arduino-uno</span>
+    <span><b>SALEMI.IT</b> micro-greens cabinet <span class="dot">●</span> LED 660nm ON</span>
+    <span><b>KINIK.TR</b> olive grove <span class="dot">●</span> 120 trees monitored</span>
+    <span><b>ROMAN.RO</b> compost temp <span class="dot">●</span> 54°C</span>
+    <span><b>SALEMI.IT</b> biocorridor <span class="dot">●</span> 17 species logged</span>
+  </div>
+</div>
+
+<section id="idea">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Why LivingYards</span>
+      <h2>Eco-anxiety is real. So is the answer growing outside the classroom window.</h2>
+    </div>
+    <div class="idea">
+      <div>
+        <p>Surveys across Europe and in Türkiye show the same pattern: students see climate change as a serious threat, yet environmental education stays mostly theoretical. Knowledge without agency breeds helplessness — a rising "eco-anxiety" among young people documented in international research. Our own baseline survey of 142 students across the three partner schools confirms it.</p>
+        <p>LivingYards closes that gap by putting students in charge of a real ecosystem. School gardens become places where organic waste turns to compost, rainwater is harvested and measured, and irrigation is run by sensor systems the students design, code and calibrate themselves.</p>
+        <p>Every line of code and every seedling is a measurable act of ecological citizenship — and a green skill demanded by tomorrow's labour market.</p>
+      </div>
+      <div class="quotebox">
+        "Students shouldn't just learn about sustainability. They should run it — with data, with soil, with their own hands."
+        <small>The LivingYards philosophy · a living laboratory in every school yard</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="objectives" class="tint">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Objectives &amp; Results</span>
+      <h2>Four objectives, four concrete results</h2>
+      <p>Aligned with the Erasmus+ horizontal priority on environment and climate, plus STEM/STEAM and teacher-support priorities in school education.</p>
+    </div>
+    <div class="obj-grid">
+      <div class="obj">
+        <span class="tag">O1 · MINDSET</span>
+        <h3>From eco-anxiety to ecological citizenship</h3>
+        <p>Transform students' passive climate anxiety into meaningful environmental awareness and responsibility through active roles in the garden ecosystem.</p>
+        <div class="result"><b>Result</b> — Ecological Citizenship Impact Report documenting measured change in awareness and psychological resilience (pre/post HOGG eco-anxiety scale).</div>
+      </div>
+      <div class="obj">
+        <span class="tag">O2 · CIRCULAR</span>
+        <h3>Self-sufficient model gardens</h3>
+        <p>Convert existing school yards into sustainable, self-sustaining demonstration gardens built on circular-economy principles.</p>
+        <div class="result"><b>Result</b> — Functional compost units, rainwater harvesting systems and on-site processing of garden produce at each school.</div>
+      </div>
+      <div class="obj">
+        <span class="tag">O3 · GREEN STEM</span>
+        <h3>Robotic &amp; sensor-based water management</h3>
+        <p>Bring technology into ecology: irrigation and soil monitoring managed through robotics and sensor networks designed by students.</p>
+        <div class="result"><b>Result</b> — Student-built "Robotic Remote Irrigation System" and "Smart Micro-Greens Cabinet" prototypes (Arduino, moisture sensors, mBlock).</div>
+      </div>
+      <div class="obj">
+        <span class="tag">O4 · STANDARD</span>
+        <h3>An international living-garden standard</h3>
+        <p>Elevate local good practice into a shared, transferable standard synthesising the experience of three countries and climates.</p>
+        <div class="result"><b>Result</b> — Multilingual, interdisciplinary <em>Sustainable Living School Gardens Implementation Guide</em> (TR · EN · IT · RO), published as an open educational resource.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="partners">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Partnership</span>
+      <h2>Three schools, three strengths</h2>
+      <p>A partnership shaped through joint needs analysis and previous Erasmus+ cooperation, combining production capacity, technological know-how and pedagogical depth.</p>
+    </div>
+    <div class="partners">
+      <div class="partner tr">
+        <span class="country">TÜRKİYE · KINIK, İZMİR · COORDINATOR</span>
+        <h3>Kınık Mesleki ve Teknik Anadolu Lisesi</h3>
+        <span class="role">Production &amp; implementation base</span>
+        <p>A 54-decare campus with 120 olive trees and 200+ trees of 50 species; chemistry and food production centres (200 t/yr · 2,000 meals/day). Coordinates the project, hosts the kick-off, TPM and final events, and manufactures micro-greens cabinets and compost units.</p>
+        <a href="http://kinikmtal.meb.k12.tr/" target="_blank" rel="noopener">kinikmtal.meb.k12.tr →</a>
+      </div>
+      <div class="partner ro">
+        <span class="country">ROMANIA · ROMAN, NORD-EST</span>
+        <h3>Liceul Tehnologic "Vasile Sav"</h3>
+        <span class="role">Technology &amp; methodology lead</span>
+        <p>A technical college of 916 students and 60 teachers specialising in electrics, electronics, automation and IT, with a "Green School" vision and its own Greenlab club. Provides the technical backbone for smart irrigation and sensor control, hosts the student camp, and builds and maintains this project website.</p>
+        <a href="https://www.vasilesav.ro" target="_blank" rel="noopener">vasilesav.ro →</a>
+      </div>
+      <div class="partner it">
+        <span class="country">ITALY · SALEMI, SICILY</span>
+        <h3>IISS F.sco D'Aguirre – Dante Alighieri</h3>
+        <span class="role">Ecology &amp; pedagogy lead</span>
+        <p>A multi-programme institute blending academic and vocational tracks, experienced in sustainability projects such as "Irreplaceable Sources of Life". Hosts the joint staff training, enriches the ecological-literacy curriculum and provides scientific support for the eco-anxiety impact methodology.</p>
+        <a href="https://www.istitutodaguirre.gov.it" target="_blank" rel="noopener">istitutodaguirre.gov.it →</a>
+      </div>
+    </div>
+    <div class="assoc">
+      <b>Associated partner</b>
+      <p><strong>Colegiul Tehnic "Gheorghe Cartianu"</strong> (Piatra-Neamț, Romania) supports the partnership with field implementation experience and local stakeholder coordination, building on long-standing cooperation with the consortium.</p>
+    </div>
+  </div>
+</section>
+
+<section id="activities" class="tint">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Activities · Nov 2026 – Feb 2028 · €60,000 total</span>
+      <h2>From kick-off to harvest</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <span class="when">01 · 9–10 Dec 2026 · Kınık, Türkiye · <em>€8,566</em></span>
+        <h3>Kick-off Meeting</h3>
+        <p>Coordinators and key staff from the three schools finalise roles and sub-agreements, approve the lump-sum budget — including an early garden-setup allocation of €1,650 per school — fix the activity calendar, standardise communication channels (eTwinning, cloud workspace) and revise the risk-management and emergency plan.</p>
+      </div>
+      <div class="tl-item">
+        <span class="when">02 · 8–12 Mar 2027 · Salemi, Italy · <em>€16,440</em></span>
+        <h3>Joint Staff Training on Green Skills Methodology</h3>
+        <p>Fifteen teachers (five per partner) train as "Living Garden Leaders": needs mapping and site analysis, soil chemistry and plant physiology, four composting techniques (worm, bokashi, hot/cold, lasagna), Arduino-based robotic irrigation, and a curriculum matrix matching garden practice to national learning outcomes. The guide's writing teams are formed here.</p>
+      </div>
+      <div class="tl-item">
+        <span class="when">03 · 1–3 Jun 2027 · Roman, Romania · <em>€14,030</em></span>
+        <h3>Ecological Literacy &amp; Eco Awareness Workshops (Student LTT)</h3>
+        <p>A green-skills camp for 24 students and 6 teachers — 40% of students selected from disadvantaged or high eco-anxiety groups, with extra points for girls in STEM. Carbon-footprint calculation, HOGG eco-anxiety scale, seed-ball and art-therapy workshops, rainwater harvesting maths, sensor calibration, mBlock-coded irrigation prototypes and LED micro-greens cabinets.</p>
+      </div>
+      <div class="tl-item">
+        <span class="when">04 · 21–23 Sep 2027 · Türkiye · <em>€7,286</em></span>
+        <h3>TPM &amp; LivingYards Guide Development</h3>
+        <p>The editorial core finalises the Implementation Guide after six months of joint drafting: four modules (Universal Design, Compost Cycle, Robotic Irrigation, Green STEM), DIY infographics, accessibility tips, impact-survey data, a policy brief for decision-makers and an interactive QR-linked flipbook in four languages.</p>
+      </div>
+      <div class="tl-item">
+        <span class="when">05 · 25–26 Jan 2028 · Türkiye · <em>€3,616</em></span>
+        <h3>Final Meeting &amp; Dissemination Event</h3>
+        <p>Results presented to local education authorities, municipalities, NGOs and press; eco-anxiety impact reports shared publicly; final reporting consolidated in the Beneficiary Module; a post-project sustainability agreement signed; and a garden festival opens the living laboratory to families and the community.</p>
+      </div>
+      <div class="tl-item">
+        <span class="when">06 · Nov 2026 – Feb 2028 · All partners · <em>€10,062</em></span>
+        <h3>Management, Implementation &amp; Dissemination</h3>
+        <p>The cross-cutting backbone of the whole 15 months: monthly Project Management Board meetings, garden construction and maintenance at each school, monitoring and evaluation with pre/mid/post measurements, the project website and social channels, eTwinning documentation, and a "Green Harvest &amp; Presentation Day" at every partner school.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="outputs">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Outputs</span>
+      <h2>What the project will leave behind</h2>
+    </div>
+    <div class="out-grid">
+      <div class="out featured">
+        <div class="icon" aria-hidden="true">📗</div>
+        <div>
+          <h3>Sustainable Living School Gardens Implementation Guide</h3>
+          <p>The project's flagship output: an open, interdisciplinary handbook synthesising three countries' practice — universal design rules, compost C/N tables, DIY circuit schematics and Green STEM lesson plans — published as an interactive flipbook with QR links to field videos, and shared on the Erasmus+ Project Results Platform and eTwinning.</p>
+          <div class="langs">AVAILABLE IN → TÜRKÇE · ENGLISH · ITALIANO · ROMÂNĂ</div>
+        </div>
+      </div>
+      <div class="out">
+        <div class="icon" aria-hidden="true">📊</div>
+        <h3>Ecological Citizenship Impact Report</h3>
+        <p>Pre/post measurement of eco-anxiety and green self-efficacy, building on a 142-student baseline survey, analysed with validated scales (HOGG, Green Self-Efficacy) and shared openly with educators and policy-makers.</p>
+      </div>
+      <div class="out">
+        <div class="icon" aria-hidden="true">🤖</div>
+        <h3>Robotic irrigation &amp; smart cabinets</h3>
+        <p>Student-designed, sensor-driven remote irrigation prototypes and LED micro-greens cabinets — working hardware that stays in daily use at each school.</p>
+      </div>
+      <div class="out">
+        <div class="icon" aria-hidden="true">♻️</div>
+        <h3>Compost &amp; rainwater systems</h3>
+        <p>Functional compost units and rainwater harvesting installations that cut schools' dependence on external water and fertiliser and feed a zero-waste school culture.</p>
+      </div>
+      <div class="out">
+        <div class="icon" aria-hidden="true">🏛️</div>
+        <h3>Policy Brief</h3>
+        <p>A data-based, applicable pilot model for green school transformation, presented to local governments and education directorates.</p>
+      </div>
+      <div class="out">
+        <div class="icon" aria-hidden="true">🌿</div>
+        <h3>Open-air ecology laboratories</h3>
+        <p>School gardens reborn as "nature museums": QR-labelled plants, iNaturalist observation zones and data panels, open to families and the local community.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tint" aria-label="Impact in numbers">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Reach</span>
+      <h2>Impact in numbers</h2>
+    </div>
+    <div class="nums">
+      <div class="num"><b>142</b><span>students in the eco-anxiety baseline survey across 3 schools</span></div>
+      <div class="num"><b>45</b><span>training mobility participants — 15 teachers and 24 students with 6 accompanying teachers</span></div>
+      <div class="num"><b>300+ / 90+</b><span>students and teachers reached across the partnership through peer &amp; cascade training</span></div>
+      <div class="num"><b>500</b><span>guide downloads targeted within 12 months of publication</span></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <div class="footer-logo">
+          <svg aria-hidden="true"><use href="#ly-logo"/></svg>
+          <b>LivingYards</b>
+        </div>
+        <p>Sürdürülebilir Yaşayan Okul Bahçeleri<br>Sustainable Living School Gardens</p>
+        <p style="margin-top:12px;font-family:var(--mono);font-size:12px">Erasmus+ KA210-SCH · Call 2026 · Round 1<br>02/11/2026 – 01/02/2028 · Form ID KA210-SCH-BA6E5FD8</p>
+      </div>
+      <div>
+        <h4>Partners</h4>
+        <ul>
+          <li><a href="http://kinikmtal.meb.k12.tr/" target="_blank" rel="noopener">Kınık MTAL (TR) — coordinator</a></li>
+          <li><a href="https://www.vasilesav.ro" target="_blank" rel="noopener">Liceul Tehnologic "Vasile Sav" (RO)</a></li>
+          <li><a href="https://www.istitutodaguirre.gov.it" target="_blank" rel="noopener">IISS F.sco D'Aguirre – Dante Alighieri (IT)</a></li>
+          <li>Colegiul Tehnic "Gheorghe Cartianu" (RO) — associated partner</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Project</h4>
+        <ul>
+          <li><a href="#objectives">Objectives</a></li>
+          <li><a href="#activities">Activities</a></li>
+          <li><a href="#outputs">Outputs</a></li>
+          <li><a href="https://school-education.ec.europa.eu/" target="_blank" rel="noopener">eTwinning / ESEP</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="eu-disclaimer">
+      <span class="eu-flag" aria-hidden="true"></span>
+      <p><strong style="color:rgba(255,255,255,.85)">Project status:</strong> this project proposal was submitted under the Erasmus+ Programme, Small-scale Partnerships in School Education (KA210-SCH), Call 2026 Round 1, to the Turkish National Agency (TR01), and is currently under evaluation. It has not yet been selected for funding. If awarded, the project will be co-funded by the European Union; views and opinions expressed will be those of the author(s) only and will not necessarily reflect those of the European Union or the granting authority. · © 2026 LivingYards Partnership · livingyards.eu</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
