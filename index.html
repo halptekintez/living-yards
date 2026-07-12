@@ -5,23 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LivingYards — Sustainable Living School Gardens</title>
 <meta name="description" content="LivingYards is an Erasmus+ KA210-SCH small-scale partnership proposal (2026–2028) transforming school yards in Türkiye, Romania and Italy into living, sensor-managed garden laboratories.">
-<link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="%2317241A"/><rect x="0" y="46" width="28" height="18" fill="%23B7B5AD"/><rect x="36" y="46" width="28" height="18" fill="%23A8A69F"/><path d="M32 50 V26" stroke="%237FB646" stroke-width="4" stroke-linecap="round"/><path d="M32 31 C24 31 20 25 19 18 C27 18 31 24 32 31 Z" fill="%237FB646"/><path d="M32 26 C40 26 44 20 45 13 C37 13 33 19 32 26 Z" fill="%23BFE58A"/><circle cx="32" cy="41" r="3.2" fill="%23FAFAF6"/></svg>'>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://livingyards.eu/">
+<meta property="og:site_name" content="LivingYards">
+<meta property="og:title" content="LivingYards — Sustainable Living School Gardens">
+<meta property="og:description" content="An Erasmus+ KA210-SCH partnership transforming school yards in Türkiye, Romania and Italy into living laboratories: compost, rainwater harvesting and student-built robotic irrigation.">
+<meta property="og:image" content="https://livingyards.eu/banner-og.jpg">
+<meta property="og:image:width" content="1600">
+<meta property="og:image:height" content="402">
+<meta property="og:image:alt" content="LivingYards — Sustainable Living School Gardens, Erasmus+ KA210-SCH">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LivingYards — Sustainable Living School Gardens">
+<meta name="twitter:description" content="An Erasmus+ KA210-SCH partnership transforming school yards into living laboratories in Türkiye, Romania and Italy.">
+<meta name="twitter:image" content="https://livingyards.eu/banner-og.jpg"><link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M32 3.5 L55.5 17 V44 L32 57.5 L8.5 44 V17 Z" fill="%2317241A" stroke="%237FB646" stroke-width="2.6" stroke-linejoin="round"/><path d="M32 50 C30.5 41 33.5 29 32 17" stroke="%237FB646" stroke-width="3.4" fill="none" stroke-linecap="round"/><path d="M32 34 C25 34 20.8 29 19.8 22.8 C27 22.8 31 28 32 34 Z" fill="%237FB646"/><path d="M32 26.5 C39 26.5 43.2 21.5 44.2 15.3 C37 15.3 33 20.5 32 26.5 Z" fill="%23BFE58A"/><path d="M32 17 C28.6 14.6 27.8 10.8 28.6 7.6 C32 9 33.6 12.4 32 17 Z" fill="%23BFE58A"/><path d="M32 50 V54 M32 50 C29 52.5 26.5 52.5 24.5 54.5 M32 50 C35 52.5 37.5 52.5 39.5 54.5" stroke="%237FB646" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg>'>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#17241A;
-  --soil:#2A3A2E;
-  --leaf:#3E7C4F;
-  --sprout:#7FB646;
-  --sprout-soft:#E8F1DC;
-  --concrete:#B7B5AD;
-  --concrete-light:#E7E5DF;
-  --paper:#FAFAF6;
-  --data:#295E8F;
-  --amber:#C99B3F;
-  --line:rgba(23,36,26,.14);
+  --ink:#17241A; --soil:#2A3A2E; --leaf:#3E7C4F; --sprout:#7FB646;
+  --sprout-soft:#E8F1DC; --concrete:#B7B5AD; --concrete-light:#E7E5DF;
+  --paper:#FAFAF6; --data:#295E8F; --amber:#C99B3F; --line:rgba(23,36,26,.14);
   --disp:"Bricolage Grotesque",system-ui,sans-serif;
   --body:"Instrument Sans",system-ui,sans-serif;
   --mono:"JetBrains Mono",ui-monospace,monospace;
@@ -36,20 +40,25 @@ h1,h2,h3{font-family:var(--disp);line-height:1.08;font-weight:640;letter-spacing
 .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--leaf);display:block;margin-bottom:14px}
 :focus-visible{outline:3px solid var(--sprout);outline-offset:2px;border-radius:2px}
 
-/* ---------- header ---------- */
+/* header */
 header{position:sticky;top:0;z-index:50;background:rgba(250,250,246,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
-.logo{text-decoration:none;display:flex;align-items:center;gap:11px}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:14px}
+.logo{text-decoration:none;display:flex;align-items:center;gap:11px;flex:none}
 .logo svg{width:38px;height:38px;flex:none}
 .logo .wordmark{display:flex;flex-direction:column;line-height:1.05}
 .logo .wordmark b{font-family:var(--disp);font-weight:700;font-size:21px;letter-spacing:-.01em}
 .logo .wordmark span{font-family:var(--mono);font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--leaf)}
-.nav ul{display:flex;gap:24px;list-style:none}
-.nav ul a{text-decoration:none;font-size:15px;font-weight:500;color:var(--soil)}
+.nav ul{display:flex;gap:22px;list-style:none}
+.nav ul a{text-decoration:none;font-size:15px;font-weight:500;color:var(--soil);white-space:nowrap}
 .nav ul a:hover{color:var(--leaf)}
+.nav-right{display:flex;align-items:center;gap:14px}
+.lang{display:flex;gap:3px;background:var(--concrete-light);border-radius:999px;padding:3px}
+.lang button{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;border:none;background:none;padding:6px 10px;border-radius:999px;cursor:pointer;color:var(--soil)}
+.lang button:hover{color:var(--ink)}
+.lang button[aria-pressed="true"]{background:var(--ink);color:#fff}
 .menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 12px;font-family:var(--mono);font-size:12px;cursor:pointer}
 
-/* ---------- hero: concrete → life ---------- */
+/* hero */
 .hero{position:relative;overflow:hidden;color:#fff;
   background:
     radial-gradient(1200px 600px at 85% 110%, rgba(127,182,70,.55), transparent 60%),
@@ -64,8 +73,6 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,250,246,.92);backdro
 .hero .wrap{position:relative;padding-top:80px;padding-bottom:64px}
 .hero .badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
 .hero h1{font-size:clamp(38px,5.8vw,76px);max-width:16ch}
-.hero h1 .concrete-word{color:#D8D6CE}
-.hero h1 .life-word{color:#BFE58A}
 .hero p.lead{max-width:58ch;margin-top:22px;font-size:clamp(16px,1.6vw,19px);color:rgba(255,255,255,.88)}
 .hero .cta-row{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
 .btn{display:inline-block;text-decoration:none;font-weight:600;font-size:15px;padding:13px 24px;border-radius:999px;transition:transform .15s ease}
@@ -80,10 +87,11 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,250,246,.92);backdro
 .status-tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;background:rgba(201,155,63,.18);border:1px solid rgba(201,155,63,.6);color:#F2D9A4;border-radius:999px;padding:7px 16px}
 .status-tag::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--amber);animation:pulse 2.2s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
-.eu-flag{width:22px;height:15px;border-radius:2px;background:#003399;position:relative;flex:none}
-.eu-flag::after{content:"★";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#FFCC00;font-size:9px}
+.eu-flag{width:22px;height:15px;border-radius:2px;flex:none;display:block;overflow:hidden}
+.concrete-word{color:#D8D6CE}
+.life-word{color:#BFE58A}
 
-/* ---------- sensor ticker ---------- */
+/* ticker */
 .ticker{background:var(--ink);color:#CFE3B8;border-top:1px solid rgba(255,255,255,.12);overflow:hidden}
 .ticker .track{display:flex;gap:56px;white-space:nowrap;padding:11px 0;font-family:var(--mono);font-size:12.5px;animation:scroll 42s linear infinite;width:max-content}
 .ticker span b{color:#fff;font-weight:500}
@@ -95,20 +103,18 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,250,246,.92);backdro
   html{scroll-behavior:auto}
 }
 
-/* ---------- sections ---------- */
+/* sections */
 section{padding:88px 0}
 section.tint{background:var(--sprout-soft)}
 .sec-head{max-width:760px;margin-bottom:48px}
 .sec-head h2{font-size:clamp(30px,4vw,46px)}
 .sec-head p{margin-top:14px;color:var(--soil)}
 
-/* idea two-col */
 .idea{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:start}
-.idea .quotebox{background:var(--ink);color:#fff;border-radius:18px;padding:34px 32px;font-family:var(--disp);font-size:clamp(20px,2.2vw,26px);line-height:1.35;position:relative}
+.idea .quotebox{background:var(--ink);color:#fff;border-radius:18px;padding:34px 32px;font-family:var(--disp);font-size:clamp(20px,2.2vw,26px);line-height:1.35}
 .idea .quotebox small{display:block;margin-top:18px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--sprout)}
 .idea p + p{margin-top:16px}
 
-/* objectives */
 .obj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
 .obj{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:12px}
 .obj .tag{font-family:var(--mono);font-size:12px;color:var(--leaf);letter-spacing:.1em}
@@ -117,7 +123,6 @@ section.tint{background:var(--sprout-soft)}
 .obj .result{margin-top:auto;border-top:1px dashed var(--line);padding-top:12px;font-size:14px}
 .obj .result b{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--data)}
 
-/* partners */
 .partners{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .partner{border-radius:16px;padding:28px;color:#fff;display:flex;flex-direction:column;gap:10px;min-height:300px}
 .partner.tr{background:linear-gradient(160deg,#2C6B41,#17241A)}
@@ -132,7 +137,6 @@ section.tint{background:var(--sprout-soft)}
 .assoc b{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--data);flex:none}
 .assoc p{font-size:14.5px;color:var(--soil)}
 
-/* activities timeline */
 .timeline{position:relative;margin-top:8px}
 .timeline::before{content:"";position:absolute;left:19px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--concrete),var(--sprout))}
 .tl-item{position:relative;padding:0 0 40px 64px}
@@ -143,7 +147,6 @@ section.tint{background:var(--sprout-soft)}
 .tl-item h3{font-size:22px;margin:6px 0 8px}
 .tl-item p{max-width:72ch;color:var(--soil);font-size:15.5px}
 
-/* outputs */
 .out-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .out{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px}
 .out .icon{width:44px;height:44px;border-radius:12px;background:var(--sprout-soft);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px}
@@ -154,13 +157,63 @@ section.tint{background:var(--sprout-soft)}
 .out.featured p{color:rgba(255,255,255,.85);font-size:15.5px}
 .out.featured .langs{margin-top:10px;font-family:var(--mono);font-size:12px;color:var(--sprout)}
 
-/* impact numbers */
 .nums{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
 .num{border-left:3px solid var(--sprout);padding-left:18px}
 .num b{display:block;font-family:var(--disp);font-size:clamp(32px,3.6vw,44px);font-weight:680;line-height:1}
 .num span{font-size:14px;color:var(--soil)}
 
-/* footer */
+/* simulation */
+#simulation .sec-head{margin-bottom:34px}
+.sim-wrap{position:relative;border-radius:18px;overflow:hidden;box-shadow:0 24px 70px rgba(23,36,26,.22);background:#EAF2E4}
+.sim-wrap svg{display:block;width:100%;height:auto}
+.sim-bar{display:flex;align-items:center;gap:16px;padding:14px 18px;background:var(--ink);color:#fff;flex-wrap:wrap}
+.sim-caption{flex:1;min-width:230px;font-size:15px;line-height:1.45}
+.sim-dots{display:flex;gap:9px}
+.sim-dots button{width:11px;height:11px;border-radius:50%;border:none;background:rgba(255,255,255,.3);cursor:pointer;padding:0;transition:background .3s,transform .3s}
+.sim-dots button:hover{background:rgba(255,255,255,.6)}
+.sim-dots button[aria-current="true"]{background:var(--sprout);transform:scale(1.25)}
+.sim-ctrl{display:flex;gap:8px}
+.sim-ctrl button{font-family:var(--mono);font-size:12px;letter-spacing:.05em;border:1px solid rgba(255,255,255,.4);background:none;color:#fff;padding:7px 14px;border-radius:999px;cursor:pointer}
+.sim-ctrl button:hover{border-color:var(--sprout);color:var(--sprout)}
+.sim-chips{position:absolute;top:16px;left:16px;display:flex;flex-direction:column;gap:8px;opacity:0;transform:translateY(-6px);transition:opacity .9s ease,transform .9s ease;pointer-events:none}
+.sim-wrap.p5 .sim-chips{opacity:1;transform:none}
+.sim-chips span{background:rgba(23,36,26,.85);color:#fff;font-family:var(--mono);font-size:11px;letter-spacing:.05em;padding:6px 12px;border-radius:999px;align-self:flex-start}
+/* scene element states */
+.sim-wrap .crack{stroke-dasharray:300;stroke-dashoffset:300;transition:stroke-dashoffset 1.8s ease .2s}
+.sim-wrap.p2 .crack{stroke-dashoffset:0}
+.sim-wrap .stem{transform:scaleY(0);transform-origin:400px 352px;transition:transform 1.7s cubic-bezier(.3,1.3,.4,1) .5s}
+.sim-wrap.p2 .stem{transform:scaleY(.58)}
+.sim-wrap.p4 .stem{transform:scaleY(1);transition-delay:.6s}
+.sim-wrap .leaf{transform:scale(0);transform-box:fill-box;transform-origin:50% 100%;transition:transform 1s cubic-bezier(.3,1.5,.6,1)}
+.sim-wrap.p2 .leaf.l1{transform:scale(1);transition-delay:1.2s}
+.sim-wrap.p2 .leaf.l2{transform:scale(1);transition-delay:1.5s}
+.sim-wrap.p4 .leaf.l3{transform:scale(1);transition-delay:1s}
+.sim-wrap.p4 .leaf.l4{transform:scale(1);transition-delay:1.3s}
+.sim-wrap.p4 .leaf.l5{transform:scale(1);transition-delay:1.6s}
+.sim-wrap .rain{opacity:0;transition:opacity .7s}
+.sim-wrap.p3 .rain{opacity:1}
+.sim-wrap.p4 .rain{opacity:0}
+.sim-wrap .raindrop{animation:rainfall 1.1s linear infinite}
+@keyframes rainfall{from{transform:translateY(-60px)}to{transform:translateY(360px)}}
+.sim-wrap .water{transform:scaleY(0);transform-box:fill-box;transform-origin:50% 100%;transition:transform 2.6s linear .4s}
+.sim-wrap.p3 .water{transform:scaleY(1)}
+.sim-wrap .pulse{opacity:0}
+.sim-wrap.p4 .pulse{opacity:1;transform-box:fill-box;transform-origin:50% 50%;animation:pulsering 1.7s ease-out infinite}
+@keyframes pulsering{0%{transform:scale(1);opacity:.9}100%{transform:scale(3.1);opacity:0}}
+.sim-wrap .reading{opacity:0;transition:opacity .7s .5s}
+.sim-wrap.p4 .reading{opacity:1}
+.sim-wrap .flowline{opacity:0;stroke-dasharray:7 9}
+.sim-wrap.p4 .flowline{opacity:1;animation:pipeflow .9s linear infinite}
+@keyframes pipeflow{to{stroke-dashoffset:-32}}
+.sim-wrap .steam{opacity:0}
+.sim-wrap.p5 .steam{opacity:1;animation:steamrise 2.6s ease-in-out infinite}
+.sim-wrap .steam.st2{animation-delay:1.1s}
+@keyframes steamrise{0%{transform:translateY(0);opacity:0}30%{opacity:.75}100%{transform:translateY(-30px);opacity:0}}
+.sim-wrap.paused *{animation-play-state:paused!important}
+@media (prefers-reduced-motion:reduce){
+  .sim-wrap *{transition-duration:.001s!important;transition-delay:0s!important;animation:none!important}
+}
+
 footer{background:var(--ink);color:rgba(255,255,255,.82);padding:60px 0 40px;font-size:14px}
 footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:40px}
 footer h4{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--sprout);margin-bottom:14px}
@@ -172,48 +225,68 @@ footer .footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:14px}
 footer .footer-logo svg{width:34px;height:34px}
 footer .footer-logo b{font-family:var(--disp);font-size:19px;color:#fff}
 .eu-disclaimer{border-top:1px solid rgba(255,255,255,.15);padding-top:28px;display:flex;gap:18px;align-items:flex-start}
-.eu-disclaimer .eu-flag{width:44px;height:30px;margin-top:3px}
-.eu-disclaimer .eu-flag::after{font-size:14px}
+.eu-disclaimer .eu-flag{width:44px;height:30px;margin-top:3px;border-radius:3px}
 .eu-disclaimer p{font-size:12.5px;color:rgba(255,255,255,.6);max-width:88ch}
 
-/* responsive */
+@media(max-width:1020px){.nav ul{gap:16px}.nav ul a{font-size:14px}}
 @media(max-width:920px){
   .obj-grid,.partners,.out-grid{grid-template-columns:1fr 1fr}
   .idea{grid-template-columns:1fr}
   .hero .facts{grid-template-columns:1fr 1fr}
   .nums{grid-template-columns:1fr 1fr}
   footer .cols{grid-template-columns:1fr 1fr}
-}
-@media(max-width:640px){
   .nav ul{display:none;position:absolute;top:68px;left:0;right:0;background:var(--paper);flex-direction:column;padding:20px 24px;border-bottom:1px solid var(--line);gap:16px}
   .nav ul.open{display:flex}
   .menu-btn{display:block}
+}
+@media(max-width:640px){
   .obj-grid,.partners,.out-grid,.nums{grid-template-columns:1fr}
   .out.featured{grid-template-columns:1fr}
   footer .cols{grid-template-columns:1fr}
   section{padding:64px 0}
+  .logo .wordmark span{display:none}
 }
 </style>
 </head>
 <body>
 
-<!-- LivingYards logo (inline SVG symbol) -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="ly-logo" viewBox="0 0 64 64">
-    <rect width="64" height="64" rx="14" fill="#17241A"/>
-    <!-- concrete pavers -->
-    <rect x="0" y="46" width="28" height="18" fill="#B7B5AD"/>
-    <rect x="36" y="46" width="28" height="18" fill="#A8A69F"/>
-    <line x1="0" y1="55" x2="28" y2="55" stroke="#9C9A92" stroke-width="1"/>
-    <line x1="36" y1="55" x2="64" y2="55" stroke="#918F87" stroke-width="1"/>
-    <!-- sprout growing from the gap -->
-    <path d="M32 51 V26" stroke="#7FB646" stroke-width="4" stroke-linecap="round"/>
-    <path d="M32 31 C24 31 20 25 19 18 C27 18 31 24 32 31 Z" fill="#7FB646"/>
-    <path d="M32 26 C40 26 44 20 45 13 C37 13 33 19 32 26 Z" fill="#BFE58A"/>
-    <!-- sensor node + signal -->
-    <circle cx="32" cy="41" r="3.2" fill="#FAFAF6"/>
-    <path d="M38.5 37.5 a8 8 0 0 1 0 7" stroke="#7FB646" stroke-width="2" fill="none" stroke-linecap="round"/>
-    <path d="M42 34.5 a12.5 12.5 0 0 1 0 13" stroke="#7FB646" stroke-width="2" fill="none" stroke-linecap="round" opacity=".55"/>
+    <!-- hexagon frame (matches banner emblem) -->
+    <path d="M32 3.5 L55.5 17 V44 L32 57.5 L8.5 44 V17 Z" fill="#17241A" stroke="#7FB646" stroke-width="2.6" stroke-linejoin="round"/>
+    <!-- sprout stem -->
+    <path d="M32 50 C30.5 41 33.5 29 32 17" stroke="#7FB646" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+    <!-- leaves -->
+    <path d="M32 34 C25 34 20.8 29 19.8 22.8 C27 22.8 31 28 32 34 Z" fill="#7FB646"/>
+    <path d="M32 26.5 C39 26.5 43.2 21.5 44.2 15.3 C37 15.3 33 20.5 32 26.5 Z" fill="#BFE58A"/>
+    <path d="M32 17 C28.6 14.6 27.8 10.8 28.6 7.6 C32 9 33.6 12.4 32 17 Z" fill="#BFE58A"/>
+    <!-- roots cracking through -->
+    <path d="M32 50 V54 M32 50 C29 52.5 26.5 52.5 24.5 54.5 M32 50 C35 52.5 37.5 52.5 39.5 54.5" stroke="#7FB646" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <!-- circuit node (left, like banner) -->
+    <path d="M25 40 H16.5" stroke="#7FB646" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="16.5" cy="40" r="2.6" fill="#7FB646"/>
+    <circle cx="25" cy="40" r="1.9" fill="#BFE58A"/>
+    <!-- signal arcs (top-right, like banner) -->
+    <circle cx="41.5" cy="17.5" r="1.7" fill="#BFE58A"/>
+    <path d="M44.5 13 a7.5 7.5 0 0 1 5 5" stroke="#7FB646" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M47 9 a11 11 0 0 1 6.5 6.5" stroke="#7FB646" stroke-width="2" fill="none" stroke-linecap="round" opacity=".55"/>
+  </symbol>
+  <symbol id="eu-flag-sym" viewBox="0 0 810 540">
+    <rect width="810" height="540" fill="#003399"/>
+    <g fill="#FFCC00">
+      <path id="eu-star" d="M0,-30 L6.74,-9.27 L28.53,-9.27 L10.9,3.54 L17.63,24.27 L0,11.46 L-17.63,24.27 L-10.9,3.54 L-28.53,-9.27 L-6.74,-9.27 Z" transform="translate(405,90)"/>
+      <use href="#eu-star" x="90" y="24.12"/>
+      <use href="#eu-star" x="155.88" y="90"/>
+      <use href="#eu-star" x="180" y="180"/>
+      <use href="#eu-star" x="155.88" y="270"/>
+      <use href="#eu-star" x="90" y="335.88"/>
+      <use href="#eu-star" x="0" y="360"/>
+      <use href="#eu-star" x="-90" y="335.88"/>
+      <use href="#eu-star" x="-155.88" y="270"/>
+      <use href="#eu-star" x="-180" y="180"/>
+      <use href="#eu-star" x="-155.88" y="90"/>
+      <use href="#eu-star" x="-90" y="24.12"/>
+    </g>
   </symbol>
 </svg>
 
@@ -221,17 +294,25 @@ footer .footer-logo b{font-family:var(--disp);font-size:19px;color:#fff}
   <div class="wrap nav">
     <a class="logo" href="#top" aria-label="LivingYards home">
       <svg role="img" aria-hidden="true"><use href="#ly-logo"/></svg>
-      <span class="wordmark"><b>LivingYards</b><span>Sustainable Living School Gardens</span></span>
+      <span class="wordmark"><b>LivingYards</b><span data-i18n="brand_sub"></span></span>
     </a>
-    <button class="menu-btn" aria-expanded="false" aria-controls="mainnav" onclick="const u=document.getElementById('mainnav');u.classList.toggle('open');this.setAttribute('aria-expanded',u.classList.contains('open'))">MENU</button>
     <ul id="mainnav">
-      <li><a href="#idea">The Idea</a></li>
-      <li><a href="#objectives">Objectives</a></li>
-      <li><a href="#partners">Partners</a></li>
-      <li><a href="#activities">Activities</a></li>
-      <li><a href="#outputs">Outputs</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#idea" data-i18n="nav_idea"></a></li>
+      <li><a href="#objectives" data-i18n="nav_obj"></a></li>
+      <li><a href="#partners" data-i18n="nav_partners"></a></li>
+      <li><a href="#activities" data-i18n="nav_act"></a></li>
+      <li><a href="#outputs" data-i18n="nav_out"></a></li>
+      <li><a href="#contact" data-i18n="nav_contact"></a></li>
     </ul>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="tr" aria-pressed="false">TR</button>
+        <button type="button" data-lang="it" aria-pressed="false">IT</button>
+        <button type="button" data-lang="ro" aria-pressed="false">RO</button>
+      </div>
+      <button class="menu-btn" aria-expanded="false" aria-controls="mainnav" onclick="const u=document.getElementById('mainnav');u.classList.toggle('open');this.setAttribute('aria-expanded',u.classList.contains('open'))">MENU</button>
+    </div>
   </div>
 </header>
 
@@ -240,20 +321,20 @@ footer .footer-logo b{font-family:var(--disp);font-size:19px;color:#fff}
 <div class="hero">
   <div class="wrap">
     <div class="badges">
-      <span class="eu-tag"><span class="eu-flag" aria-hidden="true"></span>Erasmus+ KA210-SCH · Call 2026 · Round 1</span>
-      <span class="status-tag">Application submitted — under evaluation</span>
+      <span class="eu-tag"><svg class="eu-flag" aria-hidden="true"><use href="#eu-flag-sym"/></svg><span data-i18n="badge_call"></span></span>
+      <span class="status-tag" data-i18n="badge_status"></span>
     </div>
-    <h1>Sustainable Living School Gardens</h1>
-    <p class="lead">LivingYards turns <span style="color:#D8D6CE">concrete school yards</span> in Türkiye, Romania and Italy into <span style="color:#BFE58A">living laboratories</span> — where compost cycles, rainwater harvesting and student-built robotic irrigation transform eco-anxiety into active ecological citizenship.</p>
+    <h1 data-i18n="hero_h1"></h1>
+    <p class="lead" data-i18n="hero_lead"></p>
     <div class="cta-row">
-      <a class="btn btn-solid" href="#outputs">Explore the outputs</a>
-      <a class="btn btn-ghost" href="#activities">See the activities</a>
+      <a class="btn btn-solid" href="#outputs" data-i18n="cta1"></a>
+      <a class="btn btn-ghost" href="#activities" data-i18n="cta2"></a>
     </div>
     <div class="facts" role="list">
-      <div role="listitem"><b>3 + 1</b><span>Partner schools + associated partner</span></div>
-      <div role="listitem"><b>15 months</b><span>Nov 2026 – Feb 2028</span></div>
-      <div role="listitem"><b>€60,000</b><span>Requested lump sum</span></div>
-      <div role="listitem"><b>Green + Digital</b><span>Twin transition in schools</span></div>
+      <div role="listitem"><b data-i18n="f1b"></b><span data-i18n="f1s"></span></div>
+      <div role="listitem"><b data-i18n="f2b"></b><span data-i18n="f2s"></span></div>
+      <div role="listitem"><b data-i18n="f3b"></b><span data-i18n="f3s"></span></div>
+      <div role="listitem"><b data-i18n="f4b"></b><span data-i18n="f4s"></span></div>
     </div>
   </div>
 </div>
@@ -277,21 +358,125 @@ footer .footer-logo b{font-family:var(--disp);font-size:19px;color:#fff}
   </div>
 </div>
 
+<section id="simulation">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-i18n="sim_eb"></span>
+      <h2 data-i18n="sim_h2"></h2>
+      <p data-i18n="sim_sub"></p>
+    </div>
+    <div class="sim-wrap" id="simstage">
+      <svg viewBox="0 0 800 450" role="img" aria-label="Animated simulation of the LivingYards cycle">
+        <defs>
+          <linearGradient id="simsky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#E3EEDD"/><stop offset="1" stop-color="#F6F5EE"/>
+          </linearGradient>
+        </defs>
+        <rect width="800" height="450" fill="url(#simsky)"/>
+        <!-- sun -->
+        <circle cx="708" cy="66" r="42" fill="#F2DFA6" opacity=".28"/>
+        <circle cx="708" cy="66" r="26" fill="#F2DFA6"/>
+        <!-- rain -->
+        <g class="rain" stroke="#8FB7D9" stroke-width="2.5" stroke-linecap="round">
+          <line class="raindrop" x1="80"  y1="-20" x2="72"  y2="6" style="animation-delay:0s"/>
+          <line class="raindrop" x1="160" y1="-20" x2="152" y2="6" style="animation-delay:.35s"/>
+          <line class="raindrop" x1="245" y1="-20" x2="237" y2="6" style="animation-delay:.7s"/>
+          <line class="raindrop" x1="330" y1="-20" x2="322" y2="6" style="animation-delay:.15s"/>
+          <line class="raindrop" x1="415" y1="-20" x2="407" y2="6" style="animation-delay:.55s"/>
+          <line class="raindrop" x1="500" y1="-20" x2="492" y2="6" style="animation-delay:.9s"/>
+          <line class="raindrop" x1="585" y1="-20" x2="577" y2="6" style="animation-delay:.25s"/>
+          <line class="raindrop" x1="660" y1="-20" x2="652" y2="6" style="animation-delay:.65s"/>
+          <line class="raindrop" x1="735" y1="-20" x2="727" y2="6" style="animation-delay:.45s"/>
+        </g>
+        <!-- soil + concrete slabs -->
+        <rect y="352" width="800" height="98" fill="#4A3B2E"/>
+        <g fill="#C9C7BF">
+          <rect x="0" y="326" width="152" height="26"/>
+          <rect x="160" y="326" width="152" height="26"/>
+          <rect x="320" y="326" width="152" height="26"/>
+          <rect x="480" y="326" width="152" height="26"/>
+          <rect x="640" y="326" width="160" height="26"/>
+        </g>
+        <g stroke="#A9A79F" stroke-width="2"><line x1="0" y1="330" x2="800" y2="330"/></g>
+        <!-- crack -->
+        <path class="crack" d="M318 344 L352 338 L376 346 L400 336 L424 347 L450 339 L476 345" fill="none" stroke="#7D7B73" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- compost bin -->
+        <g>
+          <rect x="108" y="292" width="88" height="60" rx="7" fill="#3E5A44" stroke="#17241A" stroke-width="3"/>
+          <rect x="100" y="282" width="104" height="14" rx="7" fill="#2C6B41" stroke="#17241A" stroke-width="3"/>
+          <path d="M144 316 C138 316 134 311 133 305 C140 305 143 310 144 316 Z" fill="#BFE58A"/>
+          <path d="M144 316 C150 316 154 311 155 305 C148 305 145 310 144 316 Z" fill="#7FB646"/>
+          <path class="steam" d="M134 274 c-5 -8 5 -12 0 -20" fill="none" stroke="#9FB98F" stroke-width="3.5" stroke-linecap="round"/>
+          <path class="steam st2" d="M162 274 c5 -8 -5 -12 0 -20" fill="none" stroke="#9FB98F" stroke-width="3.5" stroke-linecap="round"/>
+        </g>
+        <!-- rain tank -->
+        <g>
+          <path d="M584 244 L614 222 H666 L696 244 Z" fill="#A9B6AD" stroke="#2A3A2E" stroke-width="3" stroke-linejoin="round"/>
+          <rect x="594" y="244" width="92" height="106" rx="9" fill="#DDE4DC" stroke="#2A3A2E" stroke-width="3"/>
+          <rect class="water" x="600" y="252" width="80" height="92" rx="5" fill="#7FB0D6"/>
+        </g>
+        <!-- pipe: tank -> plant -->
+        <path d="M594 336 H448" fill="none" stroke="#6E8F7A" stroke-width="7" stroke-linecap="round"/>
+        <path class="flowline" d="M594 336 H448" fill="none" stroke="#BFE58A" stroke-width="3.5" stroke-linecap="round"/>
+        <circle cx="594" cy="336" r="6" fill="#2A3A2E"/>
+        <!-- sensor -->
+        <g>
+          <line x1="330" y1="352" x2="330" y2="302" stroke="#55635A" stroke-width="4.5" stroke-linecap="round"/>
+          <circle class="pulse" cx="330" cy="296" r="8" fill="none" stroke="#7FB646" stroke-width="2.5"/>
+          <circle cx="330" cy="296" r="8" fill="#295E8F" stroke="#17241A" stroke-width="2.5"/>
+          <g class="reading">
+            <rect x="278" y="248" width="104" height="28" rx="7" fill="#17241A"/>
+            <text x="330" y="267" text-anchor="middle" fill="#BFE58A" font-family="JetBrains Mono, monospace" font-size="14" data-i18n="sim_soil"></text>
+          </g>
+        </g>
+        <!-- plant -->
+        <g>
+          <path class="stem" d="M400 352 C396 316 405 286 400 226" fill="none" stroke="#4C8A3F" stroke-width="7.5" stroke-linecap="round"/>
+          <path class="leaf l1" d="M400 318 C382 318 371 307 369 292 C385 292 396 304 400 318 Z" fill="#7FB646"/>
+          <path class="leaf l2" d="M400 297 C418 297 429 286 431 271 C415 271 404 283 400 297 Z" fill="#9CCB6B"/>
+          <path class="leaf l3" d="M400 272 C380 272 368 259 366 242 C384 242 396 256 400 272 Z" fill="#7FB646"/>
+          <path class="leaf l4" d="M400 252 C420 252 432 239 434 222 C416 222 404 236 400 252 Z" fill="#BFE58A"/>
+          <path class="leaf l5" d="M400 230 C394 219 395 205 402 196 C409 205 408 220 400 230 Z" fill="#9CCB6B"/>
+        </g>
+      </svg>
+      <div class="sim-chips" aria-hidden="true">
+        <span data-i18n="sim_k1"></span>
+        <span data-i18n="sim_k2"></span>
+        <span data-i18n="sim_k3"></span>
+      </div>
+      <div class="sim-bar">
+        <p class="sim-caption" id="simcaption" aria-live="polite"></p>
+        <div class="sim-dots" id="simdots" role="tablist" aria-label="Scenes">
+          <button type="button" data-k="1" aria-label="Scene 1"></button>
+          <button type="button" data-k="2" aria-label="Scene 2"></button>
+          <button type="button" data-k="3" aria-label="Scene 3"></button>
+          <button type="button" data-k="4" aria-label="Scene 4"></button>
+          <button type="button" data-k="5" aria-label="Scene 5"></button>
+        </div>
+        <div class="sim-ctrl">
+          <button type="button" id="simplay"></button>
+          <button type="button" id="simreplay" data-i18n="sim_replay"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="idea">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">Why LivingYards</span>
-      <h2>Eco-anxiety is real. So is the answer growing outside the classroom window.</h2>
+      <span class="eyebrow" data-i18n="idea_eb"></span>
+      <h2 data-i18n="idea_h2"></h2>
     </div>
     <div class="idea">
       <div>
-        <p>Surveys across Europe and in Türkiye show the same pattern: students see climate change as a serious threat, yet environmental education stays mostly theoretical. Knowledge without agency breeds helplessness — a rising "eco-anxiety" among young people documented in international research. Our own baseline survey of 142 students across the three partner schools confirms it.</p>
-        <p>LivingYards closes that gap by putting students in charge of a real ecosystem. School gardens become places where organic waste turns to compost, rainwater is harvested and measured, and irrigation is run by sensor systems the students design, code and calibrate themselves.</p>
-        <p>Every line of code and every seedling is a measurable act of ecological citizenship — and a green skill demanded by tomorrow's labour market.</p>
+        <p data-i18n="idea_p1"></p>
+        <p data-i18n="idea_p2"></p>
+        <p data-i18n="idea_p3"></p>
       </div>
       <div class="quotebox">
-        "Students shouldn't just learn about sustainability. They should run it — with data, with soil, with their own hands."
-        <small>The LivingYards philosophy · a living laboratory in every school yard</small>
+        <span data-i18n="quote"></span>
+        <small data-i18n="quote_sub"></small>
       </div>
     </div>
   </div>
@@ -300,35 +485,15 @@ footer .footer-logo b{font-family:var(--disp);font-size:19px;color:#fff}
 <section id="objectives" class="tint">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">Objectives &amp; Results</span>
-      <h2>Four objectives, four concrete results</h2>
-      <p>Aligned with the Erasmus+ horizontal priority on environment and climate, plus STEM/STEAM and teacher-support priorities in school education.</p>
+      <span class="eyebrow" data-i18n="obj_eb"></span>
+      <h2 data-i18n="obj_h2"></h2>
+      <p data-i18n="obj_sub"></p>
     </div>
     <div class="obj-grid">
-      <div class="obj">
-        <span class="tag">O1 · MINDSET</span>
-        <h3>From eco-anxiety to ecological citizenship</h3>
-        <p>Transform students' passive climate anxiety into meaningful environmental awareness and responsibility through active roles in the garden ecosystem.</p>
-        <div class="result"><b>Result</b> — Ecological Citizenship Impact Report documenting measured change in awareness and psychological resilience (pre/post HOGG eco-anxiety scale).</div>
-      </div>
-      <div class="obj">
-        <span class="tag">O2 · CIRCULAR</span>
-        <h3>Self-sufficient model gardens</h3>
-        <p>Convert existing school yards into sustainable, self-sustaining demonstration gardens built on circular-economy principles.</p>
-        <div class="result"><b>Result</b> — Functional compost units, rainwater harvesting systems and on-site processing of garden produce at each school.</div>
-      </div>
-      <div class="obj">
-        <span class="tag">O3 · GREEN STEM</span>
-        <h3>Robotic &amp; sensor-based water management</h3>
-        <p>Bring technology into ecology: irrigation and soil monitoring managed through robotics and sensor networks designed by students.</p>
-        <div class="result"><b>Result</b> — Student-built "Robotic Remote Irrigation System" and "Smart Micro-Greens Cabinet" prototypes (Arduino, moisture sensors, mBlock).</div>
-      </div>
-      <div class="obj">
-        <span class="tag">O4 · STANDARD</span>
-        <h3>An international living-garden standard</h3>
-        <p>Elevate local good practice into a shared, transferable standard synthesising the experience of three countries and climates.</p>
-        <div class="result"><b>Result</b> — Multilingual, interdisciplinary <em>Sustainable Living School Gardens Implementation Guide</em> (TR · EN · IT · RO), published as an open educational resource.</div>
-      </div>
+      <div class="obj"><span class="tag" data-i18n="o1t"></span><h3 data-i18n="o1h"></h3><p data-i18n="o1p"></p><div class="result" data-i18n="o1r"></div></div>
+      <div class="obj"><span class="tag" data-i18n="o2t"></span><h3 data-i18n="o2h"></h3><p data-i18n="o2p"></p><div class="result" data-i18n="o2r"></div></div>
+      <div class="obj"><span class="tag" data-i18n="o3t"></span><h3 data-i18n="o3h"></h3><p data-i18n="o3p"></p><div class="result" data-i18n="o3r"></div></div>
+      <div class="obj"><span class="tag" data-i18n="o4t"></span><h3 data-i18n="o4h"></h3><p data-i18n="o4p"></p><div class="result" data-i18n="o4r"></div></div>
     </div>
   </div>
 </section>
@@ -336,36 +501,36 @@ footer .footer-logo b{font-family:var(--disp);font-size:19px;color:#fff}
 <section id="partners">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">Partnership</span>
-      <h2>Three schools, three strengths</h2>
-      <p>A partnership shaped through joint needs analysis and previous Erasmus+ cooperation, combining production capacity, technological know-how and pedagogical depth.</p>
+      <span class="eyebrow" data-i18n="par_eb"></span>
+      <h2 data-i18n="par_h2"></h2>
+      <p data-i18n="par_sub"></p>
     </div>
     <div class="partners">
       <div class="partner tr">
-        <span class="country">TÜRKİYE · KINIK, İZMİR · COORDINATOR</span>
+        <span class="country" data-i18n="p1c"></span>
         <h3>Kınık Mesleki ve Teknik Anadolu Lisesi</h3>
-        <span class="role">Production &amp; implementation base</span>
-        <p>A 54-decare campus with 120 olive trees and 200+ trees of 50 species; chemistry and food production centres (200 t/yr · 2,000 meals/day). Coordinates the project, hosts the kick-off, TPM and final events, and manufactures micro-greens cabinets and compost units.</p>
+        <span class="role" data-i18n="p1r"></span>
+        <p data-i18n="p1p"></p>
         <a href="http://kinikmtal.meb.k12.tr/" target="_blank" rel="noopener">kinikmtal.meb.k12.tr →</a>
       </div>
       <div class="partner ro">
-        <span class="country">ROMANIA · ROMAN, NORD-EST</span>
+        <span class="country" data-i18n="p2c"></span>
         <h3>Liceul Tehnologic "Vasile Sav"</h3>
-        <span class="role">Technology &amp; methodology lead</span>
-        <p>A technical college of 916 students and 60 teachers specialising in electrics, electronics, automation and IT, with a "Green School" vision and its own Greenlab club. Provides the technical backbone for smart irrigation and sensor control, hosts the student camp, and builds and maintains this project website.</p>
+        <span class="role" data-i18n="p2r"></span>
+        <p data-i18n="p2p"></p>
         <a href="https://www.vasilesav.ro" target="_blank" rel="noopener">vasilesav.ro →</a>
       </div>
       <div class="partner it">
-        <span class="country">ITALY · SALEMI, SICILY</span>
+        <span class="country" data-i18n="p3c"></span>
         <h3>IISS F.sco D'Aguirre – Dante Alighieri</h3>
-        <span class="role">Ecology &amp; pedagogy lead</span>
-        <p>A multi-programme institute blending academic and vocational tracks, experienced in sustainability projects such as "Irreplaceable Sources of Life". Hosts the joint staff training, enriches the ecological-literacy curriculum and provides scientific support for the eco-anxiety impact methodology.</p>
+        <span class="role" data-i18n="p3r"></span>
+        <p data-i18n="p3p"></p>
         <a href="https://www.istitutodaguirre.gov.it" target="_blank" rel="noopener">istitutodaguirre.gov.it →</a>
       </div>
     </div>
     <div class="assoc">
-      <b>Associated partner</b>
-      <p><strong>Colegiul Tehnic "Gheorghe Cartianu"</strong> (Piatra-Neamț, Romania) supports the partnership with field implementation experience and local stakeholder coordination, building on long-standing cooperation with the consortium.</p>
+      <b data-i18n="assoc_b"></b>
+      <p data-i18n="assoc_p"></p>
     </div>
   </div>
 </section>
@@ -373,40 +538,16 @@ footer .footer-logo b{font-family:var(--disp);font-size:19px;color:#fff}
 <section id="activities" class="tint">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">Activities · Nov 2026 – Feb 2028 · €60,000 total</span>
-      <h2>From kick-off to harvest</h2>
+      <span class="eyebrow" data-i18n="act_eb"></span>
+      <h2 data-i18n="act_h2"></h2>
     </div>
     <div class="timeline">
-      <div class="tl-item">
-        <span class="when">01 · 9–10 Dec 2026 · Kınık, Türkiye · <em>€8,566</em></span>
-        <h3>Kick-off Meeting</h3>
-        <p>Coordinators and key staff from the three schools finalise roles and sub-agreements, approve the lump-sum budget — including an early garden-setup allocation of €1,650 per school — fix the activity calendar, standardise communication channels (eTwinning, cloud workspace) and revise the risk-management and emergency plan.</p>
-      </div>
-      <div class="tl-item">
-        <span class="when">02 · 8–12 Mar 2027 · Salemi, Italy · <em>€16,440</em></span>
-        <h3>Joint Staff Training on Green Skills Methodology</h3>
-        <p>Fifteen teachers (five per partner) train as "Living Garden Leaders": needs mapping and site analysis, soil chemistry and plant physiology, four composting techniques (worm, bokashi, hot/cold, lasagna), Arduino-based robotic irrigation, and a curriculum matrix matching garden practice to national learning outcomes. The guide's writing teams are formed here.</p>
-      </div>
-      <div class="tl-item">
-        <span class="when">03 · 1–3 Jun 2027 · Roman, Romania · <em>€14,030</em></span>
-        <h3>Ecological Literacy &amp; Eco Awareness Workshops (Student LTT)</h3>
-        <p>A green-skills camp for 24 students and 6 teachers — 40% of students selected from disadvantaged or high eco-anxiety groups, with extra points for girls in STEM. Carbon-footprint calculation, HOGG eco-anxiety scale, seed-ball and art-therapy workshops, rainwater harvesting maths, sensor calibration, mBlock-coded irrigation prototypes and LED micro-greens cabinets.</p>
-      </div>
-      <div class="tl-item">
-        <span class="when">04 · 21–23 Sep 2027 · Türkiye · <em>€7,286</em></span>
-        <h3>TPM &amp; LivingYards Guide Development</h3>
-        <p>The editorial core finalises the Implementation Guide after six months of joint drafting: four modules (Universal Design, Compost Cycle, Robotic Irrigation, Green STEM), DIY infographics, accessibility tips, impact-survey data, a policy brief for decision-makers and an interactive QR-linked flipbook in four languages.</p>
-      </div>
-      <div class="tl-item">
-        <span class="when">05 · 25–26 Jan 2028 · Türkiye · <em>€3,616</em></span>
-        <h3>Final Meeting &amp; Dissemination Event</h3>
-        <p>Results presented to local education authorities, municipalities, NGOs and press; eco-anxiety impact reports shared publicly; final reporting consolidated in the Beneficiary Module; a post-project sustainability agreement signed; and a garden festival opens the living laboratory to families and the community.</p>
-      </div>
-      <div class="tl-item">
-        <span class="when">06 · Nov 2026 – Feb 2028 · All partners · <em>€10,062</em></span>
-        <h3>Management, Implementation &amp; Dissemination</h3>
-        <p>The cross-cutting backbone of the whole 15 months: monthly Project Management Board meetings, garden construction and maintenance at each school, monitoring and evaluation with pre/mid/post measurements, the project website and social channels, eTwinning documentation, and a "Green Harvest &amp; Presentation Day" at every partner school.</p>
-      </div>
+      <div class="tl-item"><span class="when" data-i18n="a1w"></span><h3 data-i18n="a1h"></h3><p data-i18n="a1p"></p></div>
+      <div class="tl-item"><span class="when" data-i18n="a2w"></span><h3 data-i18n="a2h"></h3><p data-i18n="a2p"></p></div>
+      <div class="tl-item"><span class="when" data-i18n="a3w"></span><h3 data-i18n="a3h"></h3><p data-i18n="a3p"></p></div>
+      <div class="tl-item"><span class="when" data-i18n="a4w"></span><h3 data-i18n="a4h"></h3><p data-i18n="a4p"></p></div>
+      <div class="tl-item"><span class="when" data-i18n="a5w"></span><h3 data-i18n="a5h"></h3><p data-i18n="a5p"></p></div>
+      <div class="tl-item"><span class="when" data-i18n="a6w"></span><h3 data-i18n="a6h"></h3><p data-i18n="a6p"></p></div>
     </div>
   </div>
 </section>
@@ -414,43 +555,23 @@ footer .footer-logo b{font-family:var(--disp);font-size:19px;color:#fff}
 <section id="outputs">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">Outputs</span>
-      <h2>What the project will leave behind</h2>
+      <span class="eyebrow" data-i18n="out_eb"></span>
+      <h2 data-i18n="out_h2"></h2>
     </div>
     <div class="out-grid">
       <div class="out featured">
         <div class="icon" aria-hidden="true">📗</div>
         <div>
-          <h3>Sustainable Living School Gardens Implementation Guide</h3>
-          <p>The project's flagship output: an open, interdisciplinary handbook synthesising three countries' practice — universal design rules, compost C/N tables, DIY circuit schematics and Green STEM lesson plans — published as an interactive flipbook with QR links to field videos, and shared on the Erasmus+ Project Results Platform and eTwinning.</p>
-          <div class="langs">AVAILABLE IN → TÜRKÇE · ENGLISH · ITALIANO · ROMÂNĂ</div>
+          <h3 data-i18n="of_h"></h3>
+          <p data-i18n="of_p"></p>
+          <div class="langs" data-i18n="of_l"></div>
         </div>
       </div>
-      <div class="out">
-        <div class="icon" aria-hidden="true">📊</div>
-        <h3>Ecological Citizenship Impact Report</h3>
-        <p>Pre/post measurement of eco-anxiety and green self-efficacy, building on a 142-student baseline survey, analysed with validated scales (HOGG, Green Self-Efficacy) and shared openly with educators and policy-makers.</p>
-      </div>
-      <div class="out">
-        <div class="icon" aria-hidden="true">🤖</div>
-        <h3>Robotic irrigation &amp; smart cabinets</h3>
-        <p>Student-designed, sensor-driven remote irrigation prototypes and LED micro-greens cabinets — working hardware that stays in daily use at each school.</p>
-      </div>
-      <div class="out">
-        <div class="icon" aria-hidden="true">♻️</div>
-        <h3>Compost &amp; rainwater systems</h3>
-        <p>Functional compost units and rainwater harvesting installations that cut schools' dependence on external water and fertiliser and feed a zero-waste school culture.</p>
-      </div>
-      <div class="out">
-        <div class="icon" aria-hidden="true">🏛️</div>
-        <h3>Policy Brief</h3>
-        <p>A data-based, applicable pilot model for green school transformation, presented to local governments and education directorates.</p>
-      </div>
-      <div class="out">
-        <div class="icon" aria-hidden="true">🌿</div>
-        <h3>Open-air ecology laboratories</h3>
-        <p>School gardens reborn as "nature museums": QR-labelled plants, iNaturalist observation zones and data panels, open to families and the local community.</p>
-      </div>
+      <div class="out"><div class="icon" aria-hidden="true">📊</div><h3 data-i18n="ou1h"></h3><p data-i18n="ou1p"></p></div>
+      <div class="out"><div class="icon" aria-hidden="true">🤖</div><h3 data-i18n="ou2h"></h3><p data-i18n="ou2p"></p></div>
+      <div class="out"><div class="icon" aria-hidden="true">♻️</div><h3 data-i18n="ou3h"></h3><p data-i18n="ou3p"></p></div>
+      <div class="out"><div class="icon" aria-hidden="true">🏛️</div><h3 data-i18n="ou4h"></h3><p data-i18n="ou4p"></p></div>
+      <div class="out"><div class="icon" aria-hidden="true">🌿</div><h3 data-i18n="ou5h"></h3><p data-i18n="ou5p"></p></div>
     </div>
   </div>
 </section>
@@ -458,14 +579,14 @@ footer .footer-logo b{font-family:var(--disp);font-size:19px;color:#fff}
 <section class="tint" aria-label="Impact in numbers">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">Reach</span>
-      <h2>Impact in numbers</h2>
+      <span class="eyebrow" data-i18n="num_eb"></span>
+      <h2 data-i18n="num_h2"></h2>
     </div>
     <div class="nums">
-      <div class="num"><b>142</b><span>students in the eco-anxiety baseline survey across 3 schools</span></div>
-      <div class="num"><b>45</b><span>training mobility participants — 15 teachers and 24 students with 6 accompanying teachers</span></div>
-      <div class="num"><b>300+ / 90+</b><span>students and teachers reached across the partnership through peer &amp; cascade training</span></div>
-      <div class="num"><b>500</b><span>guide downloads targeted within 12 months of publication</span></div>
+      <div class="num"><b>142</b><span data-i18n="n1s"></span></div>
+      <div class="num"><b>45</b><span data-i18n="n2s"></span></div>
+      <div class="num"><b>300+ / 90+</b><span data-i18n="n3s"></span></div>
+      <div class="num"><b>500</b><span data-i18n="n4s"></span></div>
     </div>
   </div>
 </section>
@@ -484,30 +605,553 @@ footer .footer-logo b{font-family:var(--disp);font-size:19px;color:#fff}
         <p style="margin-top:12px;font-family:var(--mono);font-size:12px">Erasmus+ KA210-SCH · Call 2026 · Round 1<br>02/11/2026 – 01/02/2028 · Form ID KA210-SCH-BA6E5FD8</p>
       </div>
       <div>
-        <h4>Partners</h4>
+        <h4 data-i18n="ft_partners"></h4>
         <ul>
-          <li><a href="http://kinikmtal.meb.k12.tr/" target="_blank" rel="noopener">Kınık MTAL (TR) — coordinator</a></li>
+          <li><a href="http://kinikmtal.meb.k12.tr/" target="_blank" rel="noopener" data-i18n="ftp1"></a></li>
           <li><a href="https://www.vasilesav.ro" target="_blank" rel="noopener">Liceul Tehnologic "Vasile Sav" (RO)</a></li>
           <li><a href="https://www.istitutodaguirre.gov.it" target="_blank" rel="noopener">IISS F.sco D'Aguirre – Dante Alighieri (IT)</a></li>
-          <li>Colegiul Tehnic "Gheorghe Cartianu" (RO) — associated partner</li>
+          <li data-i18n="ftp4"></li>
         </ul>
       </div>
       <div>
-        <h4>Project</h4>
+        <h4 data-i18n="ft_project"></h4>
         <ul>
-          <li><a href="#objectives">Objectives</a></li>
-          <li><a href="#activities">Activities</a></li>
-          <li><a href="#outputs">Outputs</a></li>
+          <li><a href="#objectives" data-i18n="nav_obj2"></a></li>
+          <li><a href="#activities" data-i18n="nav_act2"></a></li>
+          <li><a href="#outputs" data-i18n="nav_out2"></a></li>
           <li><a href="https://school-education.ec.europa.eu/" target="_blank" rel="noopener">eTwinning / ESEP</a></li>
         </ul>
       </div>
     </div>
     <div class="eu-disclaimer">
-      <span class="eu-flag" aria-hidden="true"></span>
-      <p><strong style="color:rgba(255,255,255,.85)">Project status:</strong> this project proposal was submitted under the Erasmus+ Programme, Small-scale Partnerships in School Education (KA210-SCH), Call 2026 Round 1, to the Turkish National Agency (TR01), and is currently under evaluation. It has not yet been selected for funding. If awarded, the project will be co-funded by the European Union; views and opinions expressed will be those of the author(s) only and will not necessarily reflect those of the European Union or the granting authority. · © 2026 LivingYards Partnership · livingyards.eu</p>
+      <svg class="eu-flag" aria-hidden="true"><use href="#eu-flag-sym"/></svg>
+      <p data-i18n="disclaimer"></p>
     </div>
   </div>
 </footer>
+
+<script>
+const I18N = {
+en: {
+  brand_sub: `Sustainable Living School Gardens`,
+  nav_idea: `The Idea`, nav_obj: `Objectives`, nav_partners: `Partners`, nav_act: `Activities`, nav_out: `Outputs`, nav_contact: `Contact`,
+  badge_call: `Erasmus+ KA210-SCH · Call 2026 · Round 1`,
+  badge_status: `Application submitted — under evaluation`,
+  hero_h1: `Sustainable Living School Gardens`,
+  hero_lead: `LivingYards turns <span class="concrete-word">concrete school yards</span> in Türkiye, Romania and Italy into <span class="life-word">living laboratories</span> — where compost cycles, rainwater harvesting and student-built robotic irrigation transform eco-anxiety into active ecological citizenship.`,
+  cta1: `Explore the outputs`, cta2: `See the activities`,
+  f1b: `3 + 1`, f1s: `Partner schools + associated partner`,
+  f2b: `15 months`, f2s: `Nov 2026 – Feb 2028`,
+  f3b: `€60,000`, f3s: `Requested lump sum`,
+  f4b: `Green + Digital`, f4s: `Twin transition in schools`,
+  idea_eb: `Why LivingYards`,
+  idea_h2: `Eco-anxiety is real. So is the answer growing outside the classroom window.`,
+  idea_p1: `Surveys across Europe and in Türkiye show the same pattern: students see climate change as a serious threat, yet environmental education stays mostly theoretical. Knowledge without agency breeds helplessness — a rising "eco-anxiety" among young people documented in international research. Our own baseline survey of 142 students across the three partner schools confirms it.`,
+  idea_p2: `LivingYards closes that gap by putting students in charge of a real ecosystem. School gardens become places where organic waste turns to compost, rainwater is harvested and measured, and irrigation is run by sensor systems the students design, code and calibrate themselves.`,
+  idea_p3: `Every line of code and every seedling is a measurable act of ecological citizenship — and a green skill demanded by tomorrow's labour market.`,
+  quote: `"Students shouldn't just learn about sustainability. They should run it — with data, with soil, with their own hands."`,
+  quote_sub: `The LivingYards philosophy · a living laboratory in every school yard`,
+  obj_eb: `Objectives & Results`,
+  obj_h2: `Four objectives, four concrete results`,
+  obj_sub: `Aligned with the Erasmus+ horizontal priority on environment and climate, plus STEM/STEAM and teacher-support priorities in school education.`,
+  o1t: `O1 · MINDSET`, o1h: `From eco-anxiety to ecological citizenship`,
+  o1p: `Transform students' passive climate anxiety into meaningful environmental awareness and responsibility through active roles in the garden ecosystem.`,
+  o1r: `<b>Result</b> — Ecological Citizenship Impact Report documenting measured change in awareness and psychological resilience (pre/post HOGG eco-anxiety scale).`,
+  o2t: `O2 · CIRCULAR`, o2h: `Self-sufficient model gardens`,
+  o2p: `Convert existing school yards into sustainable, self-sustaining demonstration gardens built on circular-economy principles.`,
+  o2r: `<b>Result</b> — Functional compost units, rainwater harvesting systems and on-site processing of garden produce at each school.`,
+  o3t: `O3 · GREEN STEM`, o3h: `Robotic & sensor-based water management`,
+  o3p: `Bring technology into ecology: irrigation and soil monitoring managed through robotics and sensor networks designed by students.`,
+  o3r: `<b>Result</b> — Student-built "Robotic Remote Irrigation System" and "Smart Micro-Greens Cabinet" prototypes (Arduino, moisture sensors, mBlock).`,
+  o4t: `O4 · STANDARD`, o4h: `An international living-garden standard`,
+  o4p: `Elevate local good practice into a shared, transferable standard synthesising the experience of three countries and climates.`,
+  o4r: `<b>Result</b> — Multilingual, interdisciplinary <em>Sustainable Living School Gardens Implementation Guide</em> (TR · EN · IT · RO), published as an open educational resource.`,
+  par_eb: `Partnership`,
+  par_h2: `Three schools, three strengths`,
+  par_sub: `A partnership shaped through joint needs analysis and previous Erasmus+ cooperation, combining production capacity, technological know-how and pedagogical depth.`,
+  p1c: `TÜRKİYE · KINIK, İZMİR · COORDINATOR`,
+  p1r: `Production & implementation base`,
+  p1p: `A 54-decare campus with 120 olive trees and 200+ trees of 50 species; chemistry and food production centres (200 t/yr · 2,000 meals/day). Coordinates the project, hosts the kick-off, TPM and final events, and manufactures micro-greens cabinets and compost units.`,
+  p2c: `ROMANIA · ROMAN, NORD-EST`,
+  p2r: `Technology & methodology lead`,
+  p2p: `A technical college of 916 students and 60 teachers specialising in electrics, electronics, automation and IT, with a "Green School" vision and its own Greenlab club. Provides the technical backbone for smart irrigation and sensor control, hosts the student camp, and builds and maintains this project website.`,
+  p3c: `ITALY · SALEMI, SICILY`,
+  p3r: `Ecology & pedagogy lead`,
+  p3p: `A multi-programme institute blending academic and vocational tracks, experienced in sustainability projects such as "Irreplaceable Sources of Life". Hosts the joint staff training, enriches the ecological-literacy curriculum and provides scientific support for the eco-anxiety impact methodology.`,
+  assoc_b: `Associated partner`,
+  assoc_p: `<strong>Colegiul Tehnic "Gheorghe Cartianu"</strong> (Piatra-Neamț, Romania) supports the partnership with field implementation experience and local stakeholder coordination, building on long-standing cooperation with the consortium.`,
+  act_eb: `Activities · Nov 2026 – Feb 2028 · €60,000 total`,
+  act_h2: `From kick-off to harvest`,
+  a1w: `01 · 9–10 Dec 2026 · Kınık, Türkiye · <em>€8,566</em>`,
+  a1h: `Kick-off Meeting`,
+  a1p: `Coordinators and key staff from the three schools finalise roles and sub-agreements, approve the lump-sum budget — including an early garden-setup allocation of €1,650 per school — fix the activity calendar, standardise communication channels (eTwinning, cloud workspace) and revise the risk-management and emergency plan.`,
+  a2w: `02 · 8–12 Mar 2027 · Salemi, Italy · <em>€16,440</em>`,
+  a2h: `Joint Staff Training on Green Skills Methodology`,
+  a2p: `Fifteen teachers (five per partner) train as "Living Garden Leaders": needs mapping and site analysis, soil chemistry and plant physiology, four composting techniques (worm, bokashi, hot/cold, lasagna), Arduino-based robotic irrigation, and a curriculum matrix matching garden practice to national learning outcomes. The guide's writing teams are formed here.`,
+  a3w: `03 · 1–3 Jun 2027 · Roman, Romania · <em>€14,030</em>`,
+  a3h: `Ecological Literacy & Eco Awareness Workshops (Student LTT)`,
+  a3p: `A green-skills camp for 24 students and 6 teachers — 40% of students selected from disadvantaged or high eco-anxiety groups, with extra points for girls in STEM. Carbon-footprint calculation, HOGG eco-anxiety scale, seed-ball and art-therapy workshops, rainwater harvesting maths, sensor calibration, mBlock-coded irrigation prototypes and LED micro-greens cabinets.`,
+  a4w: `04 · 21–23 Sep 2027 · Türkiye · <em>€7,286</em>`,
+  a4h: `TPM & LivingYards Guide Development`,
+  a4p: `The editorial core finalises the Implementation Guide after six months of joint drafting: four modules (Universal Design, Compost Cycle, Robotic Irrigation, Green STEM), DIY infographics, accessibility tips, impact-survey data, a policy brief for decision-makers and an interactive QR-linked flipbook in four languages.`,
+  a5w: `05 · 25–26 Jan 2028 · Türkiye · <em>€3,616</em>`,
+  a5h: `Final Meeting & Dissemination Event`,
+  a5p: `Results presented to local education authorities, municipalities, NGOs and press; eco-anxiety impact reports shared publicly; final reporting consolidated in the Beneficiary Module; a post-project sustainability agreement signed; and a garden festival opens the living laboratory to families and the community.`,
+  a6w: `06 · Nov 2026 – Feb 2028 · All partners · <em>€10,062</em>`,
+  a6h: `Management, Implementation & Dissemination`,
+  a6p: `The cross-cutting backbone of the whole 15 months: monthly Project Management Board meetings, garden construction and maintenance at each school, monitoring and evaluation with pre/mid/post measurements, the project website and social channels, eTwinning documentation, and a "Green Harvest & Presentation Day" at every partner school.`,
+  out_eb: `Outputs`,
+  out_h2: `What the project will leave behind`,
+  of_h: `Sustainable Living School Gardens Implementation Guide`,
+  of_p: `The project's flagship output: an open, interdisciplinary handbook synthesising three countries' practice — universal design rules, compost C/N tables, DIY circuit schematics and Green STEM lesson plans — published as an interactive flipbook with QR links to field videos, and shared on the Erasmus+ Project Results Platform and eTwinning.`,
+  of_l: `AVAILABLE IN → TÜRKÇE · ENGLISH · ITALIANO · ROMÂNĂ`,
+  ou1h: `Ecological Citizenship Impact Report`,
+  ou1p: `Pre/post measurement of eco-anxiety and green self-efficacy, building on a 142-student baseline survey, analysed with validated scales (HOGG, Green Self-Efficacy) and shared openly with educators and policy-makers.`,
+  ou2h: `Robotic irrigation & smart cabinets`,
+  ou2p: `Student-designed, sensor-driven remote irrigation prototypes and LED micro-greens cabinets — working hardware that stays in daily use at each school.`,
+  ou3h: `Compost & rainwater systems`,
+  ou3p: `Functional compost units and rainwater harvesting installations that cut schools' dependence on external water and fertiliser and feed a zero-waste school culture.`,
+  ou4h: `Policy Brief`,
+  ou4p: `A data-based, applicable pilot model for green school transformation, presented to local governments and education directorates.`,
+  ou5h: `Open-air ecology laboratories`,
+  ou5p: `School gardens reborn as "nature museums": QR-labelled plants, iNaturalist observation zones and data panels, open to families and the local community.`,
+  num_eb: `Reach`, num_h2: `Impact in numbers`,
+  n1s: `students in the eco-anxiety baseline survey across 3 schools`,
+  n2s: `training mobility participants — 15 teachers and 24 students with 6 accompanying teachers`,
+  n3s: `students and teachers reached across the partnership through peer & cascade training`,
+  n4s: `guide downloads targeted within 12 months of publication`,
+  sim_eb: `Interactive demo`,
+  sim_h2: `Watch a yard come alive`,
+  sim_sub: `Five scenes, one cycle: this is what the LivingYards model does to a school yard — from sealed concrete to a self-sustaining living laboratory.`,
+  sim_c1: `<b>1 · Concrete.</b> A plain school yard — sealed, unused, silent.`,
+  sim_c2: `<b>2 · Life breaks through.</b> Roots crack the slab: the first sprout of the living garden.`,
+  sim_c3: `<b>3 · Rain harvest.</b> Rainwater is collected and stored instead of running off.`,
+  sim_c4: `<b>4 · Smart irrigation.</b> Soil sensors read moisture; the Arduino-driven pump waters only when needed.`,
+  sim_c5: `<b>5 · The cycle closes.</b> Organic waste becomes compost — the garden sustains itself.`,
+  sim_soil: `SOIL 41%`,
+  sim_k1: `RAINWATER REUSE`, sim_k2: `SENSOR-DRIVEN IRRIGATION`, sim_k3: `ZERO-WASTE COMPOST`,
+  sim_pause: `❚❚ PAUSE`, sim_play: `▶ PLAY`, sim_replay: `↻ REPLAY`,
+  ft_partners: `Partners`, ft_project: `Project`,
+  ftp1: `Kınık MTAL (TR) — coordinator`,
+  ftp4: `Colegiul Tehnic "Gheorghe Cartianu" (RO) — associated partner`,
+  nav_obj2: `Objectives`, nav_act2: `Activities`, nav_out2: `Outputs`,
+  disclaimer: `<strong style="color:rgba(255,255,255,.85)">Project status:</strong> this project proposal was submitted under the Erasmus+ Programme, Small-scale Partnerships in School Education (KA210-SCH), Call 2026 Round 1, to the Turkish National Agency (TR01), and is currently under evaluation. It has not yet been selected for funding. If awarded, the project will be co-funded by the European Union; views and opinions expressed will be those of the author(s) only and will not necessarily reflect those of the European Union or the granting authority. · © 2026 LivingYards Partnership · livingyards.eu`
+},
+tr: {
+  brand_sub: `Sürdürülebilir Yaşayan Okul Bahçeleri`,
+  nav_idea: `Fikir`, nav_obj: `Hedefler`, nav_partners: `Ortaklar`, nav_act: `Faaliyetler`, nav_out: `Çıktılar`, nav_contact: `İletişim`,
+  badge_call: `Erasmus+ KA210-SCH · 2026 Çağrısı · 1. Tur`,
+  badge_status: `Başvuru yapıldı — değerlendirme aşamasında`,
+  hero_h1: `Sürdürülebilir Yaşayan Okul Bahçeleri`,
+  hero_lead: `LivingYards; Türkiye, Romanya ve İtalya'daki <span class="concrete-word">beton okul bahçelerini</span> <span class="life-word">yaşayan laboratuvarlara</span> dönüştürüyor — kompost döngüleri, yağmur suyu hasadı ve öğrencilerin kurduğu robotik sulama sistemleriyle eko-kaygı, aktif ekolojik vatandaşlığa dönüşüyor.`,
+  cta1: `Çıktıları keşfedin`, cta2: `Faaliyetleri görün`,
+  f1b: `3 + 1`, f1s: `Ortak okul + ilişkili ortak`,
+  f2b: `15 ay`, f2s: `Kas 2026 – Şub 2028`,
+  f3b: `60.000 €`, f3s: `Talep edilen götürü bütçe`,
+  f4b: `Yeşil + Dijital`, f4s: `Okullarda ikiz dönüşüm`,
+  idea_eb: `Neden LivingYards`,
+  idea_h2: `Eko-kaygı gerçek. Çözüm de sınıfın penceresinin hemen dışında büyüyor.`,
+  idea_p1: `Avrupa genelinde ve Türkiye'de yapılan araştırmalar aynı tabloyu gösteriyor: öğrenciler iklim değişikliğini ciddi bir tehdit olarak görüyor, ancak çevre eğitimi büyük ölçüde teorik kalıyor. Eyleme dönüşmeyen bilgi çaresizlik üretiyor — uluslararası literatürde belgelenen, gençler arasında yükselen "eko-kaygı". Üç ortak okulda 142 öğrenciyle yaptığımız başlangıç anketi de bunu doğruluyor.`,
+  idea_p2: `LivingYards bu açığı, öğrencileri gerçek bir ekosistemin sorumlusu yaparak kapatıyor. Okul bahçeleri; organik atıkların komposta dönüştüğü, yağmur suyunun hasat edilip ölçüldüğü ve sulamanın öğrencilerin tasarlayıp kodladığı ve kalibre ettiği sensör sistemleriyle yönetildiği alanlar hâline geliyor.`,
+  idea_p3: `Yazılan her satır kod ve dikilen her fide, ölçülebilir bir ekolojik vatandaşlık eylemi — ve geleceğin iş gücü piyasasının talep ettiği bir yeşil beceri.`,
+  quote: `"Öğrenciler sürdürülebilirliği sadece öğrenmemeli; onu yönetmeli — veriyle, toprakla, kendi elleriyle."`,
+  quote_sub: `LivingYards felsefesi · her okul bahçesinde yaşayan bir laboratuvar`,
+  obj_eb: `Hedefler ve Sonuçlar`,
+  obj_h2: `Dört hedef, dört somut sonuç`,
+  obj_sub: `Erasmus+'ın çevre ve iklim değişikliğiyle mücadele yatay önceliği ile okul eğitimindeki STEM/STEAM ve öğretmen desteği öncelikleriyle uyumlu.`,
+  o1t: `O1 · ZİHNİYET`, o1h: `Eko-kaygıdan ekolojik vatandaşlığa`,
+  o1p: `Öğrencilerin pasif iklim kaygısını, bahçe ekosisteminde üstlendikleri aktif rollerle anlamlı bir çevre bilinci ve sorumluluğuna dönüştürmek.`,
+  o1r: `<b>Sonuç</b> — Farkındalık ve psikolojik dayanıklılıktaki ölçülmüş değişimi belgeleyen "Ekolojik Vatandaşlık Etki Raporu" (HOGG eko-kaygı ölçeği ile ön/son test).`,
+  o2t: `O2 · DÖNGÜSEL`, o2h: `Kendi kendine yetebilen örnek bahçeler`,
+  o2p: `Mevcut okul bahçelerini, döngüsel ekonomi ilkeleri üzerine kurulu, sürdürülebilir ve kendi kendine yetebilen örnek bahçelere dönüştürmek.`,
+  o2r: `<b>Sonuç</b> — Her okulda işlevsel kompost üniteleri, yağmur suyu hasadı sistemleri ve bahçe ürünlerinin yerinde işlenmesi.`,
+  o3t: `O3 · YEŞİL STEM`, o3h: `Robotik ve sensör tabanlı su yönetimi`,
+  o3p: `Teknolojiyi ekolojiye taşımak: sulama ve toprak takibinin, öğrencilerin tasarladığı robotik ve sensör ağlarıyla yönetilmesi.`,
+  o3r: `<b>Sonuç</b> — Öğrenciler tarafından tasarlanan "Robotik Uzaktan Sulama Sistemi" ve "Akıllı Mikro-Yeşillik Kabini" prototipleri (Arduino, nem sensörleri, mBlock).`,
+  o4t: `O4 · STANDART`, o4h: `Uluslararası bir yaşayan bahçe standardı`,
+  o4p: `Yerel iyi uygulamaları, üç ülkenin ve ikliminin tecrübesini sentezleyen, aktarılabilir ortak bir standarda taşımak.`,
+  o4r: `<b>Sonuç</b> — Açık eğitim kaynağı olarak yayımlanacak çok dilli, disiplinler arası <em>Sürdürülebilir Yaşayan Okul Bahçeleri Uygulama Rehberi</em> (TR · EN · IT · RO).`,
+  par_eb: `Ortaklık`,
+  par_h2: `Üç okul, üç güçlü yön`,
+  par_sub: `Ortak ihtiyaç analizi ve önceki Erasmus+ iş birlikleriyle şekillenen; üretim kapasitesini, teknolojik birikimi ve pedagojik derinliği birleştiren bir ortaklık.`,
+  p1c: `TÜRKİYE · KINIK, İZMİR · KOORDİNATÖR`,
+  p1r: `Üretim ve uygulama üssü`,
+  p1p: `120 zeytin ağacı ve 50 türde 200'ü aşkın ağaca sahip 54 dönümlük kampüs; kimya ve gıda üretim merkezleri (yılda 200 ton · günde 2.000 kişilik yemek). Projeyi koordine ediyor; açılış, TPM ve final etkinliklerine ev sahipliği yapıyor; mikro-yeşillik kabinlerini ve kompost ünitelerini üretiyor.`,
+  p2c: `ROMANYA · ROMAN, NORD-EST`,
+  p2r: `Teknoloji ve metodoloji lideri`,
+  p2p: `Elektrik, elektronik, otomasyon ve bilişim alanlarında uzmanlaşmış, 916 öğrencili ve 60 öğretmenli bir teknik lise; "Yeşil Okul" vizyonu ve kendi Greenlab kulübüyle. Akıllı sulama ve sensör kontrolünün teknik omurgasını sağlıyor, öğrenci kampına ev sahipliği yapıyor ve bu proje web sitesini kurup güncel tutuyor.`,
+  p3c: `İTALYA · SALEMI, SİCİLYA`,
+  p3r: `Ekoloji ve pedagoji lideri`,
+  p3p: `Akademik ve mesleki eğitimi bir arada sunan, "Irreplaceable Sources of Life" gibi sürdürülebilirlik projelerinde deneyimli çok programlı bir kurum. Ortak personel eğitimine ev sahipliği yapıyor, ekolojik okuryazarlık müfredatını zenginleştiriyor ve eko-kaygı etki metodolojisine bilimsel destek sunuyor.`,
+  assoc_b: `İlişkili ortak`,
+  assoc_p: `<strong>Colegiul Tehnic "Gheorghe Cartianu"</strong> (Piatra-Neamț, Romanya), konsorsiyumla uzun süreli iş birliğine dayanarak saha uygulama tecrübesi ve yerel paydaş koordinasyonu ile ortaklığı destekliyor.`,
+  act_eb: `Faaliyetler · Kas 2026 – Şub 2028 · Toplam 60.000 €`,
+  act_h2: `Açılıştan hasada`,
+  a1w: `01 · 9–10 Ara 2026 · Kınık, Türkiye · <em>8.566 €</em>`,
+  a1h: `Açılış Toplantısı`,
+  a1p: `Üç okulun koordinatörleri ve kilit personeli görevleri ve alt sözleşmeleri kesinleştiriyor; her okula 1.650 €'luk erken bahçe kurulum ödeneği dahil götürü bütçeyi onaylıyor; faaliyet takvimini netleştiriyor; iletişim kanallarını (eTwinning, bulut çalışma alanı) standartlaştırıyor ve risk yönetimi ile acil durum planını revize ediyor.`,
+  a2w: `02 · 8–12 Mar 2027 · Salemi, İtalya · <em>16.440 €</em>`,
+  a2h: `Yeşil Beceriler Metodolojisi Ortak Personel Eğitimi (JSTE)`,
+  a2p: `On beş öğretmen (her ortaktan beş kişi) "Yaşayan Bahçe Lideri" olarak eğitiliyor: ihtiyaç haritalama ve saha analizi, toprak kimyası ve bitki fizyolojisi, dört kompost tekniği (solucan, bokaşi, sıcak/soğuk, lazanya), Arduino tabanlı robotik sulama ve bahçe uygulamalarını ulusal kazanımlarla eşleştiren müfredat matrisi. Rehberin yazım ekipleri burada kuruluyor.`,
+  a3w: `03 · 1–3 Haz 2027 · Roman, Romanya · <em>14.030 €</em>`,
+  a3h: `Ekolojik Okuryazarlık ve Eko-Farkındalık Atölyeleri (Öğrenci LTT)`,
+  a3p: `24 öğrenci ve 6 öğretmen için yeşil beceri kampı — öğrencilerin %40'ı dezavantajlı veya yüksek eko-kaygılı gruplardan seçiliyor, STEM'de kız öğrencilere ek puan veriliyor. Karbon ayak izi hesaplama, HOGG eko-kaygı ölçeği, tohum topu ve sanat terapisi atölyeleri, yağmur suyu hasadı hesapları, sensör kalibrasyonu, mBlock ile kodlanan sulama prototipleri ve LED mikro-yeşillik kabinleri.`,
+  a4w: `04 · 21–23 Eyl 2027 · Türkiye · <em>7.286 €</em>`,
+  a4h: `TPM ve LivingYards Rehberi Geliştirme`,
+  a4p: `Editoryal çekirdek ekip, altı aylık ortak yazım sürecinin ardından Uygulama Rehberi'ni tamamlıyor: dört modül (Evrensel Tasarım, Kompost Döngüsü, Robotik Sulama, Yeşil STEM), "Kendin Yap" infografikleri, erişilebilirlik ipuçları, etki anketi verileri, karar vericiler için politika özeti ve dört dilde QR bağlantılı interaktif e-kitap.`,
+  a5w: `05 · 25–26 Oca 2028 · Türkiye · <em>3.616 €</em>`,
+  a5h: `Final Toplantısı ve Yaygınlaştırma Etkinliği`,
+  a5p: `Sonuçlar yerel eğitim yöneticilerine, belediyelere, STK'lara ve basına sunuluyor; eko-kaygı etki raporları kamuoyuyla paylaşılıyor; nihai raporlama Yararlanıcı Modülü'nde tamamlanıyor; proje sonrası sürdürülebilirlik sözleşmesi imzalanıyor ve bir bahçe şenliğiyle yaşayan laboratuvar ailelere ve topluma açılıyor.`,
+  a6w: `06 · Kas 2026 – Şub 2028 · Tüm ortaklar · <em>10.062 €</em>`,
+  a6h: `Yönetim, Uygulama ve Yaygınlaştırma`,
+  a6p: `15 ayın tamamına yayılan omurga: aylık Proje Yönetim Kurulu toplantıları, her okulda bahçe kurulumu ve bakımı, ön/ara/son ölçümlerle izleme ve değerlendirme, proje web sitesi ve sosyal medya kanalları, eTwinning dokümantasyonu ve her ortak okulda bir "Yeşil Hasat ve Tanıtım Günü".`,
+  out_eb: `Çıktılar`,
+  out_h2: `Projeden geriye ne kalacak`,
+  of_h: `Sürdürülebilir Yaşayan Okul Bahçeleri Uygulama Rehberi`,
+  of_p: `Projenin amiral gemisi çıktısı: üç ülkenin uygulamalarını sentezleyen açık, disiplinler arası bir el kitabı — evrensel tasarım kuralları, kompost C/N tabloları, "Kendin Yap" devre şemaları ve Yeşil STEM ders planları — saha videolarına QR bağlantılı interaktif e-kitap olarak yayımlanıp Erasmus+ Proje Sonuçları Platformu ve eTwinning'de paylaşılacak.`,
+  of_l: `YAYIN DİLLERİ → TÜRKÇE · ENGLISH · ITALIANO · ROMÂNĂ`,
+  ou1h: `Ekolojik Vatandaşlık Etki Raporu`,
+  ou1p: `142 öğrencilik başlangıç anketi üzerine kurulan, geçerliliği kanıtlanmış ölçeklerle (HOGG, Yeşil Öz-Yeterlilik) analiz edilen eko-kaygı ve yeşil öz-yeterlilik ön/son test ölçümleri; eğitimciler ve politika yapıcılarla açık biçimde paylaşılacak.`,
+  ou2h: `Robotik sulama ve akıllı kabinler`,
+  ou2p: `Öğrenciler tarafından tasarlanan, sensörle çalışan uzaktan sulama prototipleri ve LED mikro-yeşillik kabinleri — her okulda günlük kullanımda kalacak çalışan donanımlar.`,
+  ou3h: `Kompost ve yağmur suyu sistemleri`,
+  ou3p: `Okulların dışarıdan su ve gübre bağımlılığını azaltan, sıfır atık okul kültürünü besleyen işlevsel kompost üniteleri ve yağmur suyu hasadı kurulumları.`,
+  ou4h: `Politika Özeti`,
+  ou4p: `Yerel yönetimlere ve eğitim müdürlüklerine sunulacak; okullarda yeşil dönüşüm için veri temelli, uygulanabilir bir pilot model.`,
+  ou5h: `Açık hava ekoloji laboratuvarları`,
+  ou5p: `"Doğa müzesi" olarak yeniden doğan okul bahçeleri: QR etiketli bitkiler, iNaturalist gözlem alanları ve veri panoları — ailelere ve yerel topluma açık.`,
+  num_eb: `Erişim`, num_h2: `Rakamlarla etki`,
+  n1s: `3 okulda eko-kaygı başlangıç anketine katılan öğrenci`,
+  n2s: `eğitim hareketliliği katılımcısı — 15 öğretmen ile 24 öğrenci ve 6 refakatçi öğretmen`,
+  n3s: `akran ve kademeli eğitimlerle ortaklık genelinde ulaşılacak öğrenci ve öğretmen`,
+  n4s: `yayımdan sonraki 12 ayda hedeflenen rehber indirme sayısı`,
+  sim_eb: `Etkileşimli demo`,
+  sim_h2: `Bir bahçenin canlanışını izleyin`,
+  sim_sub: `Beş sahne, tek döngü: LivingYards modelinin bir okul bahçesine yaptığı tam olarak bu — mühürlü betondan kendine yeten yaşayan bir laboratuvara.`,
+  sim_c1: `<b>1 · Beton.</b> Sıradan bir okul bahçesi — mühürlü, kullanılmayan, sessiz.`,
+  sim_c2: `<b>2 · Yaşam betonu kırıyor.</b> Kökler plakayı çatlatıyor: yaşayan bahçenin ilk filizi.`,
+  sim_c3: `<b>3 · Yağmur hasadı.</b> Yağmur suyu akıp gitmek yerine toplanıp depolanıyor.`,
+  sim_c4: `<b>4 · Akıllı sulama.</b> Toprak sensörleri nemi okuyor; Arduino kontrollü pompa yalnızca gerektiğinde suluyor.`,
+  sim_c5: `<b>5 · Döngü kapanıyor.</b> Organik atık komposta dönüşüyor — bahçe kendi kendine yetiyor.`,
+  sim_soil: `NEM %41`,
+  sim_k1: `YAĞMUR SUYU GERİ KAZANIMI`, sim_k2: `SENSÖRLÜ SULAMA`, sim_k3: `SIFIR ATIK KOMPOST`,
+  sim_pause: `❚❚ DURAKLAT`, sim_play: `▶ OYNAT`, sim_replay: `↻ BAŞTAN`,
+  ft_partners: `Ortaklar`, ft_project: `Proje`,
+  ftp1: `Kınık MTAL (TR) — koordinatör`,
+  ftp4: `Colegiul Tehnic "Gheorghe Cartianu" (RO) — ilişkili ortak`,
+  nav_obj2: `Hedefler`, nav_act2: `Faaliyetler`, nav_out2: `Çıktılar`,
+  disclaimer: `<strong style="color:rgba(255,255,255,.85)">Proje durumu:</strong> bu proje teklifi, Erasmus+ Programı Okul Eğitiminde Küçük Ölçekli Ortaklıklar (KA210-SCH) 2026 Çağrısı 1. Tur kapsamında Türkiye Ulusal Ajansı'na (TR01) sunulmuş olup hâlen değerlendirme aşamasındadır. Henüz hibe almaya hak kazanmamıştır. Hibe alması hâlinde proje Avrupa Birliği tarafından eş-finanse edilecek; ifade edilen görüş ve düşünceler yalnızca yazar(lar)a ait olacak, Avrupa Birliği'nin veya hibe makamının görüşlerini yansıtmayabilecektir. · © 2026 LivingYards Ortaklığı · livingyards.eu`
+},
+it: {
+  brand_sub: `Giardini Scolastici Viventi e Sostenibili`,
+  nav_idea: `L'idea`, nav_obj: `Obiettivi`, nav_partners: `Partner`, nav_act: `Attività`, nav_out: `Risultati`, nav_contact: `Contatti`,
+  badge_call: `Erasmus+ KA210-SCH · Bando 2026 · Round 1`,
+  badge_status: `Candidatura presentata — in fase di valutazione`,
+  hero_h1: `Giardini Scolastici Viventi e Sostenibili`,
+  hero_lead: `LivingYards trasforma i <span class="concrete-word">cortili scolastici di cemento</span> in Türkiye, Romania e Italia in <span class="life-word">laboratori viventi</span> — dove cicli di compostaggio, raccolta dell'acqua piovana e irrigazione robotica costruita dagli studenti trasformano l'eco-ansia in cittadinanza ecologica attiva.`,
+  cta1: `Scopri i risultati`, cta2: `Vedi le attività`,
+  f1b: `3 + 1`, f1s: `Scuole partner + partner associato`,
+  f2b: `15 mesi`, f2s: `Nov 2026 – Feb 2028`,
+  f3b: `60.000 €`, f3s: `Somma forfettaria richiesta`,
+  f4b: `Verde + Digitale`, f4s: `Doppia transizione nelle scuole`,
+  idea_eb: `Perché LivingYards`,
+  idea_h2: `L'eco-ansia è reale. Anche la risposta che cresce fuori dalla finestra dell'aula lo è.`,
+  idea_p1: `Le indagini in Europa e in Türkiye mostrano lo stesso quadro: gli studenti percepiscono il cambiamento climatico come una minaccia seria, ma l'educazione ambientale resta per lo più teorica. Conoscenza senza azione genera impotenza — una crescente "eco-ansia" tra i giovani, documentata dalla ricerca internazionale. La nostra indagine iniziale su 142 studenti delle tre scuole partner lo conferma.`,
+  idea_p2: `LivingYards colma questo divario affidando agli studenti la gestione di un ecosistema reale. I giardini scolastici diventano luoghi dove i rifiuti organici si trasformano in compost, l'acqua piovana viene raccolta e misurata e l'irrigazione è gestita da sistemi a sensori che gli studenti stessi progettano, programmano e calibrano.`,
+  idea_p3: `Ogni riga di codice e ogni piantina è un atto misurabile di cittadinanza ecologica — e una competenza verde richiesta dal mercato del lavoro di domani.`,
+  quote: `"Gli studenti non dovrebbero solo studiare la sostenibilità. Dovrebbero gestirla — con i dati, con la terra, con le proprie mani."`,
+  quote_sub: `La filosofia LivingYards · un laboratorio vivente in ogni cortile scolastico`,
+  obj_eb: `Obiettivi e risultati`,
+  obj_h2: `Quattro obiettivi, quattro risultati concreti`,
+  obj_sub: `In linea con la priorità orizzontale Erasmus+ su ambiente e clima, e con le priorità STEM/STEAM e di sostegno agli insegnanti nell'istruzione scolastica.`,
+  o1t: `O1 · MENTALITÀ`, o1h: `Dall'eco-ansia alla cittadinanza ecologica`,
+  o1p: `Trasformare l'ansia climatica passiva degli studenti in consapevolezza e responsabilità ambientale attraverso ruoli attivi nell'ecosistema del giardino.`,
+  o1r: `<b>Risultato</b> — Rapporto d'Impatto sulla Cittadinanza Ecologica che documenta il cambiamento misurato in consapevolezza e resilienza psicologica (scala HOGG pre/post).`,
+  o2t: `O2 · CIRCOLARE`, o2h: `Giardini modello autosufficienti`,
+  o2p: `Convertire i cortili scolastici esistenti in giardini dimostrativi sostenibili e autosufficienti, fondati sui principi dell'economia circolare.`,
+  o2r: `<b>Risultato</b> — Unità di compostaggio funzionanti, sistemi di raccolta dell'acqua piovana e lavorazione in loco dei prodotti del giardino in ogni scuola.`,
+  o3t: `O3 · GREEN STEM`, o3h: `Gestione dell'acqua robotica e basata su sensori`,
+  o3p: `Portare la tecnologia nell'ecologia: irrigazione e monitoraggio del suolo gestiti da robotica e reti di sensori progettate dagli studenti.`,
+  o3r: `<b>Risultato</b> — Prototipi costruiti dagli studenti: "Sistema di Irrigazione Robotica a Distanza" e "Smart Micro-Greens Cabinet" (Arduino, sensori di umidità, mBlock).`,
+  o4t: `O4 · STANDARD`, o4h: `Uno standard internazionale del giardino vivente`,
+  o4p: `Elevare le buone pratiche locali a uno standard condiviso e trasferibile che sintetizza l'esperienza di tre paesi e climi.`,
+  o4r: `<b>Risultato</b> — <em>Guida all'Implementazione dei Giardini Scolastici Viventi e Sostenibili</em>, multilingue e interdisciplinare (TR · EN · IT · RO), pubblicata come risorsa educativa aperta.`,
+  par_eb: `Partenariato`,
+  par_h2: `Tre scuole, tre punti di forza`,
+  par_sub: `Un partenariato costruito su un'analisi congiunta dei bisogni e su precedenti collaborazioni Erasmus+, che unisce capacità produttiva, competenze tecnologiche e profondità pedagogica.`,
+  p1c: `TÜRKİYE · KINIK, SMIRNE · COORDINATORE`,
+  p1r: `Base di produzione e implementazione`,
+  p1p: `Un campus di 54 decari con 120 ulivi e oltre 200 alberi di 50 specie; centri di produzione chimica e alimentare (200 t/anno · 2.000 pasti/giorno). Coordina il progetto, ospita kick-off, TPM ed eventi finali, e produce i micro-greens cabinet e le unità di compostaggio.`,
+  p2c: `ROMANIA · ROMAN, NORD-EST`,
+  p2r: `Guida tecnologica e metodologica`,
+  p2p: `Un istituto tecnico con 916 studenti e 60 docenti specializzato in elettrotecnica, elettronica, automazione e informatica, con una visione di "Scuola Verde" e il proprio club Greenlab. Fornisce la spina dorsale tecnica per l'irrigazione intelligente e il controllo dei sensori, ospita il campo studentesco e realizza e mantiene questo sito web.`,
+  p3c: `ITALIA · SALEMI, SICILIA`,
+  p3r: `Guida ecologica e pedagogica`,
+  p3p: `Un istituto multi-indirizzo che unisce percorsi accademici e professionali, con esperienza in progetti di sostenibilità come "Irreplaceable Sources of Life". Ospita la formazione congiunta del personale, arricchisce il curricolo di alfabetizzazione ecologica e offre supporto scientifico alla metodologia d'impatto sull'eco-ansia.`,
+  assoc_b: `Partner associato`,
+  assoc_p: `Il <strong>Colegiul Tehnic "Gheorghe Cartianu"</strong> (Piatra-Neamț, Romania) sostiene il partenariato con esperienza di implementazione sul campo e coordinamento degli stakeholder locali, sulla base di una lunga collaborazione con il consorzio.`,
+  act_eb: `Attività · Nov 2026 – Feb 2028 · 60.000 € totali`,
+  act_h2: `Dal kick-off al raccolto`,
+  a1w: `01 · 9–10 dic 2026 · Kınık, Türkiye · <em>8.566 €</em>`,
+  a1h: `Riunione di avvio (Kick-off)`,
+  a1p: `Coordinatori e personale chiave delle tre scuole definiscono ruoli e sub-accordi, approvano il budget forfettario — inclusa una dotazione iniziale di 1.650 € per scuola per l'allestimento dei giardini — fissano il calendario delle attività, standardizzano i canali di comunicazione (eTwinning, spazio cloud) e revisionano il piano di gestione dei rischi e delle emergenze.`,
+  a2w: `02 · 8–12 mar 2027 · Salemi, Italia · <em>16.440 €</em>`,
+  a2h: `Formazione congiunta del personale sulla metodologia delle competenze verdi`,
+  a2p: `Quindici docenti (cinque per partner) si formano come "Leader del Giardino Vivente": mappatura dei bisogni e analisi del sito, chimica del suolo e fisiologia vegetale, quattro tecniche di compostaggio (vermicompost, bokashi, caldo/freddo, lasagna), irrigazione robotica basata su Arduino e una matrice curricolare che collega le pratiche in giardino ai traguardi nazionali. Qui si formano i gruppi di scrittura della guida.`,
+  a3w: `03 · 1–3 giu 2027 · Roman, Romania · <em>14.030 €</em>`,
+  a3h: `Alfabetizzazione ecologica e laboratori di eco-consapevolezza (LTT studenti)`,
+  a3p: `Un campo di competenze verdi per 24 studenti e 6 docenti — il 40% degli studenti selezionato tra gruppi svantaggiati o ad alta eco-ansia, con punti extra per le ragazze nelle STEM. Calcolo dell'impronta di carbonio, scala HOGG, laboratori di seed-ball e arteterapia, calcoli sulla raccolta dell'acqua piovana, calibrazione dei sensori, prototipi di irrigazione programmati con mBlock e micro-greens cabinet a LED.`,
+  a4w: `04 · 21–23 set 2027 · Türkiye · <em>7.286 €</em>`,
+  a4h: `TPM e sviluppo della Guida LivingYards`,
+  a4p: `Il nucleo editoriale finalizza la Guida all'Implementazione dopo sei mesi di stesura congiunta: quattro moduli (Design Universale, Ciclo del Compost, Irrigazione Robotica, Green STEM), infografiche fai-da-te, indicazioni di accessibilità, dati delle indagini d'impatto, un policy brief per i decisori e un flipbook interattivo con QR in quattro lingue.`,
+  a5w: `05 · 25–26 gen 2028 · Türkiye · <em>3.616 €</em>`,
+  a5h: `Riunione finale ed evento di disseminazione`,
+  a5p: `I risultati sono presentati ad autorità scolastiche locali, comuni, ONG e stampa; i rapporti sull'eco-ansia sono resi pubblici; la rendicontazione finale è consolidata nel Beneficiary Module; si firma un accordo di sostenibilità post-progetto e una festa del giardino apre il laboratorio vivente a famiglie e comunità.`,
+  a6w: `06 · Nov 2026 – Feb 2028 · Tutti i partner · <em>10.062 €</em>`,
+  a6h: `Gestione, implementazione e disseminazione`,
+  a6p: `La spina dorsale trasversale dei 15 mesi: riunioni mensili del Comitato di Gestione, costruzione e manutenzione dei giardini in ogni scuola, monitoraggio e valutazione con misurazioni pre/intermedie/post, sito web e canali social del progetto, documentazione su eTwinning e una "Giornata del Raccolto Verde" in ogni scuola partner.`,
+  out_eb: `Risultati`,
+  out_h2: `Cosa lascerà il progetto`,
+  of_h: `Guida all'Implementazione dei Giardini Scolastici Viventi e Sostenibili`,
+  of_p: `Il risultato di punta del progetto: un manuale aperto e interdisciplinare che sintetizza la pratica di tre paesi — regole di design universale, tabelle C/N del compost, schemi elettrici fai-da-te e piani di lezione Green STEM — pubblicato come flipbook interattivo con link QR ai video sul campo, e condiviso sulla Erasmus+ Project Results Platform e su eTwinning.`,
+  of_l: `DISPONIBILE IN → TÜRKÇE · ENGLISH · ITALIANO · ROMÂNĂ`,
+  ou1h: `Rapporto d'Impatto sulla Cittadinanza Ecologica`,
+  ou1p: `Misurazione pre/post di eco-ansia e autoefficacia verde, basata su un'indagine iniziale con 142 studenti, analizzata con scale validate (HOGG, Green Self-Efficacy) e condivisa apertamente con educatori e decisori.`,
+  ou2h: `Irrigazione robotica e cabinet intelligenti`,
+  ou2p: `Prototipi di irrigazione a distanza guidati da sensori e micro-greens cabinet a LED progettati dagli studenti — hardware funzionante in uso quotidiano in ogni scuola.`,
+  ou3h: `Sistemi di compostaggio e acqua piovana`,
+  ou3p: `Unità di compostaggio funzionanti e impianti di raccolta dell'acqua piovana che riducono la dipendenza delle scuole da acqua e fertilizzanti esterni e alimentano una cultura scolastica a rifiuti zero.`,
+  ou4h: `Policy Brief`,
+  ou4p: `Un modello pilota basato sui dati e applicabile per la trasformazione verde delle scuole, presentato a enti locali e direzioni scolastiche.`,
+  ou5h: `Laboratori di ecologia all'aperto`,
+  ou5p: `Giardini scolastici rinati come "musei della natura": piante etichettate con QR, aree di osservazione iNaturalist e pannelli dati, aperti alle famiglie e alla comunità locale.`,
+  num_eb: `Portata`, num_h2: `L'impatto in numeri`,
+  n1s: `studenti nell'indagine iniziale sull'eco-ansia nelle 3 scuole`,
+  n2s: `partecipanti alle mobilità formative — 15 docenti e 24 studenti con 6 accompagnatori`,
+  n3s: `studenti e docenti raggiunti nel partenariato tramite formazione tra pari e a cascata`,
+  n4s: `download della guida previsti entro 12 mesi dalla pubblicazione`,
+  sim_eb: `Demo interattiva`,
+  sim_h2: `Guarda un cortile prendere vita`,
+  sim_sub: `Cinque scene, un ciclo: ecco cosa fa il modello LivingYards a un cortile scolastico — dal cemento sigillato a un laboratorio vivente autosufficiente.`,
+  sim_c1: `<b>1 · Cemento.</b> Un cortile scolastico qualunque — sigillato, inutilizzato, silenzioso.`,
+  sim_c2: `<b>2 · La vita si fa strada.</b> Le radici spaccano la lastra: il primo germoglio del giardino vivente.`,
+  sim_c3: `<b>3 · Raccolta della pioggia.</b> L'acqua piovana viene raccolta e conservata invece di disperdersi.`,
+  sim_c4: `<b>4 · Irrigazione intelligente.</b> I sensori leggono l'umidità del suolo; la pompa guidata da Arduino irriga solo quando serve.`,
+  sim_c5: `<b>5 · Il ciclo si chiude.</b> I rifiuti organici diventano compost — il giardino si sostiene da solo.`,
+  sim_soil: `SUOLO 41%`,
+  sim_k1: `RIUSO ACQUA PIOVANA`, sim_k2: `IRRIGAZIONE A SENSORI`, sim_k3: `COMPOST RIFIUTI ZERO`,
+  sim_pause: `❚❚ PAUSA`, sim_play: `▶ PLAY`, sim_replay: `↻ RIAVVIA`,
+  ft_partners: `Partner`, ft_project: `Progetto`,
+  ftp1: `Kınık MTAL (TR) — coordinatore`,
+  ftp4: `Colegiul Tehnic "Gheorghe Cartianu" (RO) — partner associato`,
+  nav_obj2: `Obiettivi`, nav_act2: `Attività`, nav_out2: `Risultati`,
+  disclaimer: `<strong style="color:rgba(255,255,255,.85)">Stato del progetto:</strong> questa proposta è stata presentata nell'ambito del Programma Erasmus+, Partenariati su piccola scala nell'istruzione scolastica (KA210-SCH), Bando 2026 Round 1, all'Agenzia Nazionale turca (TR01), ed è attualmente in fase di valutazione. Non è ancora stata selezionata per il finanziamento. In caso di approvazione, il progetto sarà cofinanziato dall'Unione Europea; le opinioni espresse saranno esclusivamente quelle degli autori e non rifletteranno necessariamente quelle dell'Unione Europea o dell'autorità concedente. · © 2026 Partenariato LivingYards · livingyards.eu`
+},
+ro: {
+  brand_sub: `Grădini Școlare Vii și Durabile`,
+  nav_idea: `Ideea`, nav_obj: `Obiective`, nav_partners: `Parteneri`, nav_act: `Activități`, nav_out: `Rezultate`, nav_contact: `Contact`,
+  badge_call: `Erasmus+ KA210-SCH · Apel 2026 · Runda 1`,
+  badge_status: `Candidatură depusă — în curs de evaluare`,
+  hero_h1: `Grădini Școlare Vii și Durabile`,
+  hero_lead: `LivingYards transformă <span class="concrete-word">curțile școlare de beton</span> din Türkiye, România și Italia în <span class="life-word">laboratoare vii</span> — unde ciclurile de compost, colectarea apei de ploaie și irigarea robotică construită de elevi transformă eco-anxietatea în cetățenie ecologică activă.`,
+  cta1: `Explorează rezultatele`, cta2: `Vezi activitățile`,
+  f1b: `3 + 1`, f1s: `Școli partenere + partener asociat`,
+  f2b: `15 luni`, f2s: `Nov 2026 – Feb 2028`,
+  f3b: `60.000 €`, f3s: `Sumă forfetară solicitată`,
+  f4b: `Verde + Digital`, f4s: `Dubla tranziție în școli`,
+  idea_eb: `De ce LivingYards`,
+  idea_h2: `Eco-anxietatea este reală. La fel și răspunsul care crește chiar sub fereastra clasei.`,
+  idea_p1: `Sondajele din Europa și din Türkiye arată același tipar: elevii percep schimbările climatice ca pe o amenințare serioasă, dar educația de mediu rămâne în mare parte teoretică. Cunoașterea fără acțiune naște neputință — o "eco-anxietate" în creștere în rândul tinerilor, documentată de cercetarea internațională. Sondajul nostru inițial pe 142 de elevi din cele trei școli partenere o confirmă.`,
+  idea_p2: `LivingYards închide acest decalaj punând elevii la conducerea unui ecosistem real. Grădinile școlare devin locuri în care deșeurile organice se transformă în compost, apa de ploaie este colectată și măsurată, iar irigarea este gestionată de sisteme cu senzori pe care elevii înșiși le proiectează, le programează și le calibrează.`,
+  idea_p3: `Fiecare linie de cod și fiecare răsad este un act măsurabil de cetățenie ecologică — și o competență verde cerută de piața muncii de mâine.`,
+  quote: `"Elevii nu ar trebui doar să învețe despre durabilitate. Ar trebui să o gestioneze — cu date, cu pământ, cu propriile mâini."`,
+  quote_sub: `Filosofia LivingYards · un laborator viu în fiecare curte de școală`,
+  obj_eb: `Obiective și rezultate`,
+  obj_h2: `Patru obiective, patru rezultate concrete`,
+  obj_sub: `Aliniate priorității orizontale Erasmus+ privind mediul și clima, precum și priorităților STEM/STEAM și de sprijinire a profesorilor în educația școlară.`,
+  o1t: `O1 · MENTALITATE`, o1h: `De la eco-anxietate la cetățenie ecologică`,
+  o1p: `Transformarea anxietății climatice pasive a elevilor în conștientizare și responsabilitate de mediu, prin roluri active în ecosistemul grădinii.`,
+  o1r: `<b>Rezultat</b> — Raportul de Impact al Cetățeniei Ecologice, care documentează schimbarea măsurată a conștientizării și rezilienței psihologice (scala HOGG pre/post).`,
+  o2t: `O2 · CIRCULAR`, o2h: `Grădini model autosuficiente`,
+  o2p: `Transformarea curților școlare existente în grădini demonstrative durabile și autosuficiente, construite pe principiile economiei circulare.`,
+  o2r: `<b>Rezultat</b> — Unități funcționale de compost, sisteme de colectare a apei de ploaie și procesarea la fața locului a produselor din grădină, în fiecare școală.`,
+  o3t: `O3 · GREEN STEM`, o3h: `Gestionarea apei prin robotică și senzori`,
+  o3p: `Aducerea tehnologiei în ecologie: irigarea și monitorizarea solului gestionate prin robotică și rețele de senzori proiectate de elevi.`,
+  o3r: `<b>Rezultat</b> — Prototipuri construite de elevi: "Sistemul Robotic de Irigare la Distanță" și "Smart Micro-Greens Cabinet" (Arduino, senzori de umiditate, mBlock).`,
+  o4t: `O4 · STANDARD`, o4h: `Un standard internațional al grădinii vii`,
+  o4p: `Ridicarea bunelor practici locale la un standard comun și transferabil, care sintetizează experiența a trei țări și climate.`,
+  o4r: `<b>Rezultat</b> — <em>Ghidul de Implementare a Grădinilor Școlare Vii și Durabile</em>, multilingv și interdisciplinar (TR · EN · IT · RO), publicat ca resursă educațională deschisă.`,
+  par_eb: `Parteneriat`,
+  par_h2: `Trei școli, trei puncte forte`,
+  par_sub: `Un parteneriat conturat printr-o analiză comună a nevoilor și prin cooperări Erasmus+ anterioare, care combină capacitatea de producție, expertiza tehnologică și profunzimea pedagogică.`,
+  p1c: `TÜRKİYE · KINIK, İZMİR · COORDONATOR`,
+  p1r: `Bază de producție și implementare`,
+  p1p: `Un campus de 54 de decare cu 120 de măslini și peste 200 de copaci din 50 de specii; centre de producție chimică și alimentară (200 t/an · 2.000 de mese/zi). Coordonează proiectul, găzduiește reuniunea de lansare, TPM și evenimentele finale și produce cabinetele de micro-verdețuri și unitățile de compost.`,
+  p2c: `ROMÂNIA · ROMAN, NORD-EST`,
+  p2r: `Lider tehnologic și metodologic`,
+  p2p: `Un liceu tehnologic cu 916 elevi și 60 de profesori, specializat în electrotehnică, electronică, automatizări și IT, cu o viziune de "Școală Verde" și propriul club Greenlab. Asigură coloana vertebrală tehnică pentru irigarea inteligentă și controlul senzorilor, găzduiește tabăra elevilor și construiește și întreține acest site web.`,
+  p3c: `ITALIA · SALEMI, SICILIA`,
+  p3r: `Lider ecologic și pedagogic`,
+  p3p: `Un institut multi-profil care îmbină trasee academice și profesionale, cu experiență în proiecte de durabilitate precum "Irreplaceable Sources of Life". Găzduiește formarea comună a personalului, îmbogățește curriculumul de alfabetizare ecologică și oferă sprijin științific metodologiei de impact privind eco-anxietatea.`,
+  assoc_b: `Partener asociat`,
+  assoc_p: `<strong>Colegiul Tehnic "Gheorghe Cartianu"</strong> (Piatra-Neamț, România) sprijină parteneriatul cu experiență de implementare pe teren și coordonarea părților interesate locale, pe baza unei cooperări îndelungate cu consorțiul.`,
+  act_eb: `Activități · Nov 2026 – Feb 2028 · 60.000 € în total`,
+  act_h2: `De la lansare la recoltă`,
+  a1w: `01 · 9–10 dec 2026 · Kınık, Türkiye · <em>8.566 €</em>`,
+  a1h: `Reuniunea de lansare (Kick-off)`,
+  a1p: `Coordonatorii și personalul-cheie din cele trei școli finalizează rolurile și sub-acordurile, aprobă bugetul forfetar — inclusiv o alocare inițială de 1.650 € pe școală pentru amenajarea grădinilor — stabilesc calendarul activităților, standardizează canalele de comunicare (eTwinning, spațiu cloud) și revizuiesc planul de gestionare a riscurilor și a situațiilor de urgență.`,
+  a2w: `02 · 8–12 mar 2027 · Salemi, Italia · <em>16.440 €</em>`,
+  a2h: `Formare comună a personalului privind metodologia competențelor verzi`,
+  a2p: `Cincisprezece profesori (câte cinci de la fiecare partener) se formează ca "Lideri ai Grădinii Vii": cartografierea nevoilor și analiza terenului, chimia solului și fiziologia plantelor, patru tehnici de compostare (râme, bokashi, cald/rece, lasagna), irigare robotică pe bază de Arduino și o matrice curriculară care leagă practica din grădină de competențele naționale. Aici se formează echipele de redactare a ghidului.`,
+  a3w: `03 · 1–3 iun 2027 · Roman, România · <em>14.030 €</em>`,
+  a3h: `Alfabetizare ecologică și ateliere de eco-conștientizare (LTT elevi)`,
+  a3p: `O tabără de competențe verzi pentru 24 de elevi și 6 profesori — 40% dintre elevi selectați din grupuri dezavantajate sau cu eco-anxietate ridicată, cu puncte suplimentare pentru fete în STEM. Calculul amprentei de carbon, scala HOGG, ateliere de seed-ball și art-terapie, calcule privind colectarea apei de ploaie, calibrarea senzorilor, prototipuri de irigare programate în mBlock și cabinete de micro-verdețuri cu LED.`,
+  a4w: `04 · 21–23 sep 2027 · Türkiye · <em>7.286 €</em>`,
+  a4h: `TPM și dezvoltarea Ghidului LivingYards`,
+  a4p: `Nucleul editorial finalizează Ghidul de Implementare după șase luni de redactare comună: patru module (Design Universal, Ciclul Compostului, Irigare Robotică, Green STEM), infografice DIY, recomandări de accesibilitate, date din sondajele de impact, un rezumat de politici pentru decidenți și un flipbook interactiv cu coduri QR în patru limbi.`,
+  a5w: `05 · 25–26 ian 2028 · Türkiye · <em>3.616 €</em>`,
+  a5h: `Reuniunea finală și evenimentul de diseminare`,
+  a5p: `Rezultatele sunt prezentate autorităților educaționale locale, primăriilor, ONG-urilor și presei; rapoartele privind eco-anxietatea sunt făcute publice; raportarea finală este consolidată în Beneficiary Module; se semnează un acord de durabilitate post-proiect, iar un festival al grădinii deschide laboratorul viu familiilor și comunității.`,
+  a6w: `06 · Nov 2026 – Feb 2028 · Toți partenerii · <em>10.062 €</em>`,
+  a6h: `Management, implementare și diseminare`,
+  a6p: `Coloana vertebrală transversală a celor 15 luni: reuniuni lunare ale Consiliului de Management al Proiectului, construirea și întreținerea grădinilor în fiecare școală, monitorizare și evaluare cu măsurători pre/intermediare/post, site-ul web și canalele sociale ale proiectului, documentarea pe eTwinning și o "Zi a Recoltei Verzi" în fiecare școală parteneră.`,
+  out_eb: `Rezultate`,
+  out_h2: `Ce va lăsa proiectul în urmă`,
+  of_h: `Ghidul de Implementare a Grădinilor Școlare Vii și Durabile`,
+  of_p: `Rezultatul emblematic al proiectului: un manual deschis și interdisciplinar care sintetizează practica din trei țări — reguli de design universal, tabele C/N pentru compost, scheme electrice DIY și planuri de lecție Green STEM — publicat ca flipbook interactiv cu linkuri QR către videoclipuri de teren și distribuit pe Erasmus+ Project Results Platform și eTwinning.`,
+  of_l: `DISPONIBIL ÎN → TÜRKÇE · ENGLISH · ITALIANO · ROMÂNĂ`,
+  ou1h: `Raportul de Impact al Cetățeniei Ecologice`,
+  ou1p: `Măsurători pre/post ale eco-anxietății și auto-eficacității verzi, pornind de la un sondaj inițial pe 142 de elevi, analizate cu scale validate (HOGG, Green Self-Efficacy) și distribuite deschis educatorilor și decidenților.`,
+  ou2h: `Irigare robotică și cabinete inteligente`,
+  ou2p: `Prototipuri de irigare la distanță conduse de senzori și cabinete de micro-verdețuri cu LED, proiectate de elevi — echipamente funcționale în uz zilnic în fiecare școală.`,
+  ou3h: `Sisteme de compost și apă de ploaie`,
+  ou3p: `Unități funcționale de compost și instalații de colectare a apei de ploaie care reduc dependența școlilor de apă și îngrășăminte externe și hrănesc o cultură școlară zero-deșeuri.`,
+  ou4h: `Rezumat de politici (Policy Brief)`,
+  ou4p: `Un model-pilot aplicabil, bazat pe date, pentru transformarea verde a școlilor, prezentat autorităților locale și inspectoratelor școlare.`,
+  ou5h: `Laboratoare de ecologie în aer liber`,
+  ou5p: `Grădini școlare renăscute ca "muzee ale naturii": plante etichetate cu QR, zone de observare iNaturalist și panouri de date, deschise familiilor și comunității locale.`,
+  num_eb: `Acoperire`, num_h2: `Impactul în cifre`,
+  n1s: `elevi în sondajul inițial privind eco-anxietatea, în cele 3 școli`,
+  n2s: `participanți la mobilitățile de formare — 15 profesori și 24 de elevi cu 6 profesori însoțitori`,
+  n3s: `elevi și profesori la nivelul parteneriatului, prin formare între egali și în cascadă`,
+  n4s: `descărcări ale ghidului vizate în 12 luni de la publicare`,
+  sim_eb: `Demo interactiv`,
+  sim_h2: `Privește cum prinde viață o curte`,
+  sim_sub: `Cinci scene, un ciclu: exact asta face modelul LivingYards cu o curte de școală — de la beton sigilat la un laborator viu autosuficient.`,
+  sim_c1: `<b>1 · Beton.</b> O curte de școală obișnuită — sigilată, nefolosită, tăcută.`,
+  sim_c2: `<b>2 · Viața răzbate.</b> Rădăcinile crapă placa: primul vlăstar al grădinii vii.`,
+  sim_c3: `<b>3 · Recoltarea ploii.</b> Apa de ploaie este colectată și stocată în loc să se scurgă.`,
+  sim_c4: `<b>4 · Irigare inteligentă.</b> Senzorii citesc umiditatea solului; pompa controlată de Arduino udă doar când e nevoie.`,
+  sim_c5: `<b>5 · Ciclul se închide.</b> Deșeurile organice devin compost — grădina se susține singură.`,
+  sim_soil: `SOL 41%`,
+  sim_k1: `REFOLOSIREA APEI DE PLOAIE`, sim_k2: `IRIGARE CU SENZORI`, sim_k3: `COMPOST ZERO DEȘEURI`,
+  sim_pause: `❚❚ PAUZĂ`, sim_play: `▶ REDARE`, sim_replay: `↻ REIA`,
+  ft_partners: `Parteneri`, ft_project: `Proiect`,
+  ftp1: `Kınık MTAL (TR) — coordonator`,
+  ftp4: `Colegiul Tehnic "Gheorghe Cartianu" (RO) — partener asociat`,
+  nav_obj2: `Obiective`, nav_act2: `Activități`, nav_out2: `Rezultate`,
+  disclaimer: `<strong style="color:rgba(255,255,255,.85)">Stadiul proiectului:</strong> această propunere de proiect a fost depusă în cadrul Programului Erasmus+, Parteneriate la scară mică în educația școlară (KA210-SCH), Apelul 2026 Runda 1, la Agenția Națională din Turcia (TR01) și se află în prezent în curs de evaluare. Nu a fost încă selectată pentru finanțare. În cazul aprobării, proiectul va fi cofinanțat de Uniunea Europeană; opiniile exprimate vor aparține exclusiv autorilor și nu vor reflecta neapărat opiniile Uniunii Europene sau ale autorității finanțatoare. · © 2026 Parteneriatul LivingYards · livingyards.eu`
+}
+};
+
+let currentLang = "en";
+
+function applyLang(lang){
+  if(!I18N[lang]) lang = "en";
+  currentLang = lang;
+  const dict = I18N[lang];
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    if(dict[key] !== undefined) el.innerHTML = dict[key];
+  });
+  document.documentElement.lang = lang;
+  document.querySelectorAll(".lang button").forEach(b => {
+    b.setAttribute("aria-pressed", b.dataset.lang === lang ? "true" : "false");
+  });
+  if (window.__simReady) updateSimUI();
+  // keep language in the URL so links are shareable (no browser storage used)
+  try{
+    const url = new URL(window.location.href);
+    if(lang === "en") url.searchParams.delete("lang");
+    else url.searchParams.set("lang", lang);
+    history.replaceState(null, "", url);
+  }catch(e){}
+}
+
+document.querySelectorAll(".lang button").forEach(b => {
+  b.addEventListener("click", () => applyLang(b.dataset.lang));
+});
+
+// initial language: ?lang= parameter if valid, otherwise English
+let initial = "en";
+try{
+  const p = new URLSearchParams(window.location.search).get("lang");
+  if(p && I18N[p]) initial = p;
+}catch(e){}
+applyLang(initial);
+
+/* ---------- LivingYards cycle simulation ---------- */
+const simWrap = document.getElementById("simstage");
+const simCaption = document.getElementById("simcaption");
+const simDots = Array.from(document.querySelectorAll("#simdots button"));
+const simPlayBtn = document.getElementById("simplay");
+const SIM_PHASES = 5, SIM_STEP = 4600;
+let simPhase = 1, simTimer = null, simPaused = false;
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function updateSimUI(){
+  const d = I18N[currentLang];
+  simCaption.innerHTML = d["sim_c" + simPhase] || "";
+  simPlayBtn.textContent = simPaused ? d.sim_play : d.sim_pause;
+  simDots.forEach(b => b.setAttribute("aria-current", +b.dataset.k === simPhase ? "true" : "false"));
+}
+
+function setSimPhase(k){
+  simPhase = k;
+  for(let i = 1; i <= SIM_PHASES; i++) simWrap.classList.toggle("p" + i, i <= k);
+  updateSimUI();
+}
+
+function simTick(){ setSimPhase(simPhase >= SIM_PHASES ? 1 : simPhase + 1); }
+
+function startSimTimer(){
+  clearInterval(simTimer);
+  if(!reduceMotion) simTimer = setInterval(simTick, SIM_STEP);
+}
+
+simPlayBtn.addEventListener("click", () => {
+  simPaused = !simPaused;
+  simWrap.classList.toggle("paused", simPaused);
+  if(simPaused) clearInterval(simTimer); else startSimTimer();
+  updateSimUI();
+});
+
+document.getElementById("simreplay").addEventListener("click", () => {
+  simPaused = false;
+  simWrap.classList.remove("paused");
+  // remove all phase classes first so transitions replay from scratch
+  for(let i = 1; i <= SIM_PHASES; i++) simWrap.classList.remove("p" + i);
+  requestAnimationFrame(() => requestAnimationFrame(() => { setSimPhase(1); startSimTimer(); }));
+});
+
+simDots.forEach(b => b.addEventListener("click", () => {
+  setSimPhase(+b.dataset.k);
+  if(!simPaused) startSimTimer();
+}));
+
+window.__simReady = true;
+if(reduceMotion){ setSimPhase(SIM_PHASES); }
+else {
+  setSimPhase(1);
+  // start playing when the section scrolls into view
+  if("IntersectionObserver" in window){
+    const io = new IntersectionObserver(entries => {
+      if(entries[0].isIntersecting){ startSimTimer(); io.disconnect(); }
+    }, {threshold: .35});
+    io.observe(simWrap);
+  } else startSimTimer();
+}
+</script>
 
 </body>
 </html>
